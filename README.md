@@ -1,5 +1,5 @@
 # MYALDOC
-Le projet myaldoc (Meet Your Alternative Doctor) est projet de mis en place d'une solution informatique pour la mise en relation entre les particuliers et des médecins alternatifs.  
+Le projet myaldoc (Meet Your Alternative Doctor) est projet de mise en place d'une solution informatique pour la mise en relation entre les particuliers et des médecins alternatifs.  
 La solution est une application web et mobile.  
 #
 La partie server sera écrit en java (et peut être Kotlin). 
