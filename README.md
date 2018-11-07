@@ -17,3 +17,13 @@ On pourra y retrouver les technologies suivantes :
   * Lombok 
 #
 **La partie client** (web et mobile)sera développée avec IONIC
+#
+#
+
+**Ports des différents services**
+
+config - service  : 8888
+
+eureka - service  : 8761
+
+proxy-service : 9999
