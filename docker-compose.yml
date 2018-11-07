@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  config:
+    image: hsedjame/myaldoc_config-service:config-service
+
+    ports:
+    - 8888:8888
+
+
+  eureka:
+    image: hsedjame/myaldoc_eureka-service:eureka-service
+
+    depends_on:
+    - config
+    ports:
+    - 8761:8761
+
+
