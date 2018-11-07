@@ -33,6 +33,31 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/core/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/core/src/main/java/org/myaldoc/core/exceptions/ExceptionBuilder.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/core/src/main/java/org/myaldoc/core/formatters/JSONFormatter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/core/src/main/java/org/myaldoc/core/utils/BigDecimalUtils.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/core/src/main/java/org/myaldoc/core/utils/RequireObjects.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/eureka-service/pom.xml">
           <value>
             <set />
