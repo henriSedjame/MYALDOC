@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -68,8 +69,15 @@ public abstract class ExceptionBuilder<T extends Exception> {
     T exception = null;
 
     StringBuilder exceptionMessageBuilder = new StringBuilder();
+    String separator = "";
 
-    this.exceptions.forEach(e -> exceptionMessageBuilder.append(e.getMessage()));
+    for (T t : this.exceptions) {
+      final String message = t.getMessage();
+      final String causeMessage = t.getCause().getMessage();
+      String formattedMessage = MessageFormat.format("{0} ( {1} ) {2}", message, causeMessage, separator);
+      exceptionMessageBuilder.append(formattedMessage);
+      separator = MessageFormat.format("{0}", "\n");
+    }
 
     try {
       Constructor<T> constructor = exceptionClass.getConstructor(String.class);
