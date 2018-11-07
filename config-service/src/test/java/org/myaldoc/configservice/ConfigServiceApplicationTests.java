@@ -7,6 +7,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.RestTemplate;
 
@@ -14,6 +15,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringRunner.class)
+@ContextConfiguration(classes = {ConfigServiceApplication.class})
 @SpringBootTest
 public class ConfigServiceApplicationTests {
 
@@ -25,16 +27,20 @@ public class ConfigServiceApplicationTests {
 
   @Test
   public void contextLoads() throws JSONException {
+    try {
+      String result = template.getForObject("http://localhost:8888/test/master", String.class);
+      JSONObject json = new JSONObject(result);
+      JSONArray propertySources = (JSONArray) json.get("propertySources");
+      JSONObject source1 = propertySources.getJSONObject(0);
+      JSONObject source = source1.getJSONObject("source");
+      assertNotNull(source);
+      Object value = source.get(TEST_NAME);
+      assertNotNull(value);
+      assertEquals(TEST_VALUE, value.toString());
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
 
-    String result = template.getForObject("http://localhost:8888/test/master", String.class);
-    JSONObject json = new JSONObject(result);
-    JSONArray propertySources = (JSONArray) json.get("propertySources");
-    JSONObject source1 = propertySources.getJSONObject(0);
-    JSONObject source = source1.getJSONObject("source");
-    assertNotNull(source);
-    Object value = source.get(TEST_NAME);
-    assertNotNull(value);
-    assertEquals(TEST_VALUE, value.toString());
   }
 
 
