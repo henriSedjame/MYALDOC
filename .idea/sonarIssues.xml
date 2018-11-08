@@ -8,6 +8,96 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../CLOUD_SECURITY_TEST/security-authorization-server/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../CLOUD_SECURITY_TEST/security-authorization-server/src/main/java/org/cloud/securityauthorizationserver/SecurityAuthorizationServerApplication.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../CLOUD_SECURITY_TEST/security-authorization-server/src/main/java/org/cloud/securityauthorizationserver/securityConfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../CLOUD_SECURITY_TEST/security-authorization-server/src/main/resources/application.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../CLOUD_SECURITY_TEST/security-resource-server/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../CLOUD_SECURITY_TEST/security-resource-server/src/main/java/org/cloud/securityresourceserver/Account.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../CLOUD_SECURITY_TEST/security-resource-server/src/main/java/org/cloud/securityresourceserver/AccountController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../CLOUD_SECURITY_TEST/security-resource-server/src/main/java/org/cloud/securityresourceserver/SecurityResourceServerApplication.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../CLOUD_SECURITY_TEST/security-resource-server/src/main/resources/application.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../CLOUD_SECURITY_TEST/security-server/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../CLOUD_SECURITY_TEST/security-server/src/main/resources/application.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../CLOUD_SECURITY_TEST/security-server/src/main/resources/application.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../CLOUD_SECURITY_TEST/security-server/src/main/resources/templates/login.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../CLOUD_SECURITY_TEST/security/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../CLOUD_SECURITY_TEST/security/src/main/java/org/cloud/security/EmpRestController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../CLOUD_SECURITY_TEST/security/src/main/java/org/cloud/security/Employee.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../CLOUD_SECURITY_TEST/security/src/main/java/org/cloud/security/SecurityApplication.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../CLOUD_SECURITY_TEST/security/src/main/resources/application.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/README.md">
           <value>
             <set />
@@ -68,6 +158,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/docker-compose.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/eureka-service/docker/Dockerfile">
           <value>
             <set />
@@ -84,6 +179,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/eureka-service/src/main/resources/application.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/eureka-service/src/main/resources/bootstrap.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/wait-for-dependencies.sh">
           <value>
             <set />
           </value>
