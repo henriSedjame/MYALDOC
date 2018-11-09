@@ -8,6 +8,16 @@
             <set />
           </value>
         </entry>
+        <entry key="/a.dummy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/fragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../CLOUD_SECURITY_TEST/security-authorization-server/pom.xml">
           <value>
             <set />
@@ -88,7 +98,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../CLOUD_SECURITY_TEST/security/src/main/java/org/cloud/security/OAuthConfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../CLOUD_SECURITY_TEST/security/src/main/java/org/cloud/security/SecurityApplication.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../CLOUD_SECURITY_TEST/security/src/main/java/org/cloud/security/webConfig.java">
           <value>
             <set />
           </value>
@@ -99,6 +119,86 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/README.md">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-server/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-server/src/main/java/org/myaldoc/authorizationserver/AuthorizationServerApplication.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-server/src/main/java/org/myaldoc/authorizationserver/configuration/AuthorizationServerconfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-server/src/main/java/org/myaldoc/authorizationserver/configuration/GlobalConfiguration.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-server/src/main/java/org/myaldoc/authorizationserver/configuration/MyaldocClient.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-server/src/main/java/org/myaldoc/authorizationserver/configuration/MyaldocClientDetails.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-server/src/main/java/org/myaldoc/authorizationserver/configuration/MyaldocClientDetailsService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-server/src/main/java/org/myaldoc/authorizationserver/configuration/UserController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-server/src/main/java/org/myaldoc/authorizationserver/configuration/WebMvcConfiguration.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-server/src/main/java/org/myaldoc/authorizationserver/configuration/WebSecurityConfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-server/src/main/java/org/myaldoc/authorizationserver/configuration/model/MyaldocClient.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-server/src/main/java/org/myaldoc/authorizationserver/configuration/model/MyaldocClientDetails.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-server/src/main/resources/application.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-server/src/main/resources/bootstrap.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-server/src/main/resources/templates/login.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-server/src/test/java/org/myaldoc/authorizationserver/configuration/MyaldocClientDetailsServiceTest.java">
           <value>
             <set />
           </value>
@@ -144,6 +244,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/core/src/main/java/org/myaldoc/core/utils/BigDecimalUtils.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/core/src/main/java/org/myaldoc/core/utils/IterableUtils.java">
           <value>
             <set />
           </value>
@@ -194,6 +299,41 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../MYALDOC_CONFIG/config/application.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../security-client/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../security-client/src/main/java/org/test/securityclient/config/OAuthConfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../security-client/src/main/java/org/test/securityclient/config/WebConfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../security-client/src/main/java/org/test/securityclient/controller/SecureController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../security-client/src/main/resources/application.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../security-client/src/main/resources/templates/index.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../security-client/src/main/resources/templates/secure.html">
           <value>
             <set />
           </value>

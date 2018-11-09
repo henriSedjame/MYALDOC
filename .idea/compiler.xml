@@ -6,12 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="authorization-server" />
         <module name="config-service" />
         <module name="core" />
         <module name="eureka-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="authorization-server" target="11" />
       <module name="config-service" target="11" />
       <module name="core" target="11" />
       <module name="eureka-service" target="11" />

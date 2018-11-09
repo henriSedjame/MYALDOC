@@ -6,7 +6,7 @@ La solution est une application web et mobile.
 **La partie server** sera écrit en java (et peut être Kotlin). 
 On pourra y retrouver les technologies suivantes :  
   * Spring boot 
-  * Spring Security 
+  * Spring cloud Security && OAuth2 
   * Spring Web et Reactive Web 
   * Spring AOP Spring Mongo DB & Reative Mongo 
   * ElasticSearch 
@@ -27,3 +27,5 @@ config - service  : 8888
 eureka - service  : 8761
 
 proxy-service : 9999
+
+authorization-server : 9000
