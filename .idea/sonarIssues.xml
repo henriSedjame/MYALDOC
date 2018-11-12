@@ -173,6 +173,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/authorization-server/src/main/java/org/myaldoc/authorizationserver/configuration/model/CustomOAuth2ClientDetails.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/authorization-server/src/main/java/org/myaldoc/authorizationserver/configuration/model/MyaldocClient.java">
           <value>
             <set />
@@ -293,12 +298,57 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/proxy-server/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/proxy-server/src/main/java/org/myaldoc/proxyserver/controller/TestController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/proxy-server/src/main/java/org/myaldoc/proxyserver/controller/UserController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/proxy-server/src/main/java/org/myaldoc/proxyserver/security/config/OAuth2ClientContextFilterWithPath.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/proxy-server/src/main/java/org/myaldoc/proxyserver/security/config/Securityconfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/proxy-server/src/main/resources/bootstrap.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/proxy-server/src/main/resources/bootstrap.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/wait-for-dependencies.sh">
           <value>
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../MYALDOC_CONFIG/authorization-server.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../MYALDOC_CONFIG/config/application.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MYALDOC_CONFIG/proxy-server.yml">
           <value>
             <set />
           </value>

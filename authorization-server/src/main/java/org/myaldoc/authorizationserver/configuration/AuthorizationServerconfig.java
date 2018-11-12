@@ -1,6 +1,6 @@
 package org.myaldoc.authorizationserver.configuration;
 
-import org.myaldoc.authorizationserver.configuration.model.MyaldocClientDetails;
+import org.myaldoc.authorizationserver.configuration.model.CustomOAuth2ClientDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -16,8 +16,7 @@ public class AuthorizationServerconfig extends AuthorizationServerConfigurerAdap
   @Autowired
   private BCryptPasswordEncoder passwordEncoder;
   @Autowired
-  private MyaldocClientDetails clientDetails;
-
+  private CustomOAuth2ClientDetails clientDetails;
 
   @Override
   public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
