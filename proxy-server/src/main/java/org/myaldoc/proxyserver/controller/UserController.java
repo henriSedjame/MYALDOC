@@ -40,11 +40,6 @@ public class UserController {
             .build();
   }
 
-  @GetMapping("/deconnect")
-  public void disconnect(OAuth2Authentication auth) {
-    auth.eraseCredentials();
-    context.setAccessToken(null);
-  }
 
   @Builder
   @Getter
