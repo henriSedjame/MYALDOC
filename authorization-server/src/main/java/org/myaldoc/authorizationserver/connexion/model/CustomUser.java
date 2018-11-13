@@ -3,12 +3,13 @@ package org.myaldoc.authorizationserver.connexion.model;
 import lombok.*;
 import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonSetter;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.*;
 import java.util.Collection;
 
-@Entity
-@Table(name = "Users")
+@Document(collection = "Users")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -16,11 +17,10 @@ import java.util.Collection;
 @Builder
 public class CustomUser {
   @Id
-  @GeneratedValue
-  private Long id;
+  private String id;
   private String username;
   private String password;
-  @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+  @DBRef
   private Collection<CustomRole> roles;
 
   @JsonIgnore

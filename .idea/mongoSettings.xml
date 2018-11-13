@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="MongoConfiguration">
-    <option name="shellPath" value="D:\mongodb\mongodb-win32-x86_64-2008plus-ssl-4.0.4\bin\mongod.exe" />
+    <option name="serverConfigurations">
+      <list>
+        <ServerConfiguration>
+          <option name="label" value="Mongo" />
+          <option name="serverUrls">
+            <list>
+              <option value="localhost:27017" />
+            </list>
+          </option>
+          <option name="sshTunnelingConfiguration">
+            <SshTunnelingConfiguration />
+          </option>
+        </ServerConfiguration>
+      </list>
+    </option>
+    <option name="shellPath" value="C:\mongodb\mongodb-win32-x86_64-2008plus-ssl-4.0.4\bin\mongod.exe" />
   </component>
 </project>

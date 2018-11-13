@@ -2,12 +2,13 @@ package org.myaldoc.authorizationserver.connexion.service;
 
 import org.myaldoc.authorizationserver.connexion.model.CustomRole;
 import org.myaldoc.authorizationserver.connexion.model.CustomUser;
+import reactor.core.publisher.Mono;
 
 public interface ConnectionService {
 
-  CustomUser saveUser(CustomUser user);
+  Mono<CustomUser> saveUser(CustomUser user);
 
-  CustomRole saveRole(CustomRole role);
+  Mono<CustomRole> saveRole(CustomRole role);
 
   void addRoleToUser(String username, String rolename);
 

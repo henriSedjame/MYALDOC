@@ -1,5 +1,6 @@
 package org.myaldoc.authorizationserver.configuration;
 
+import lombok.extern.slf4j.Slf4j;
 import org.myaldoc.authorizationserver.configuration.service.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -13,6 +14,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 @Configuration
 @EnableResourceServer
 @Order(1)
+@Slf4j
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
   @Autowired

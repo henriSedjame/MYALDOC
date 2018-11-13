@@ -7,11 +7,9 @@ import org.myaldoc.authorizationserver.connexion.repository.CustomUserRepository
 import org.myaldoc.authorizationserver.connexion.service.ConnectionService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import javax.transaction.Transactional;
+import reactor.core.publisher.Mono;
 
 @Service
-@Transactional
 public class ConnectionServiceImpl implements ConnectionService {
 
   private CustomUserRepository userRepository;
@@ -25,22 +23,21 @@ public class ConnectionServiceImpl implements ConnectionService {
   }
 
   @Override
-  public CustomUser saveUser(CustomUser user) {
+  public Mono<CustomUser> saveUser(CustomUser user) {
     user.setPassword(this.passwordEncoder.encode(user.getPassword()));
     return this.userRepository.save(user);
   }
 
   @Override
-  public CustomRole saveRole(CustomRole role) {
+  public Mono<CustomRole> saveRole(CustomRole role) {
     return this.roleRepository.save(role);
   }
 
   @Override
   public void addRoleToUser(String username, String rolename) {
-    CustomUser user = this.userRepository.findByUsername(username);
-    CustomRole role = this.roleRepository.findByRoleName(rolename);
-    user.getRoles().add(role);
-
+    Mono<CustomUser> user = this.userRepository.findByUsername(username);
+    Mono<CustomRole> role = this.roleRepository.findByRoleName(rolename);
+    Mono.zip(user, role).subscribe(tuple2 -> tuple2.getT1().getRoles().add(tuple2.getT2()));
   }
 
 }

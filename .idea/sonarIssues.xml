@@ -223,12 +223,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/authorization-server/src/main/java/org/myaldoc/authorizationserver/connexion/model/CustomUser.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/authorization-server/src/main/java/org/myaldoc/authorizationserver/connexion/repository/CommonRoleRepository.java">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/authorization-server/src/main/java/org/myaldoc/authorizationserver/connexion/repository/CommonUserRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-server/src/main/java/org/myaldoc/authorizationserver/connexion/repository/CustomRoleRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-server/src/main/java/org/myaldoc/authorizationserver/connexion/repository/CustomUserRepository.java">
           <value>
             <set />
           </value>
