@@ -3,11 +3,13 @@ package org.myaldoc.authorizationserver.connexion.model;
 import lombok.*;
 import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonSetter;
+import org.myaldoc.authorizationserver.connexion.comparator.Comparators;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.Collection;
+import java.util.Set;
+import java.util.TreeSet;
 
 @Document(collection = "Users")
 @Getter
@@ -21,7 +23,7 @@ public class CustomUser {
   private String username;
   private String password;
   @DBRef
-  private Collection<CustomRole> roles;
+  private Set<CustomRole> roles = new TreeSet<>(Comparators.ROLE_COMPARATOR);
 
   @JsonIgnore
   public String getPassword() {
