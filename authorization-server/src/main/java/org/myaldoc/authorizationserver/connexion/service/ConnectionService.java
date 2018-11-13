@@ -10,6 +10,8 @@ public interface ConnectionService {
 
   Mono<CustomRole> saveRole(CustomRole role);
 
+  Mono<CustomUser> updateUser(CustomUser user);
+
   void addRoleToUser(String username, String rolename);
 
 

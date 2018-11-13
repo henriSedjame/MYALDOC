@@ -25,19 +25,28 @@ public class ConnectionServiceImpl implements ConnectionService {
   @Override
   public Mono<CustomUser> saveUser(CustomUser user) {
     user.setPassword(this.passwordEncoder.encode(user.getPassword()));
-    return this.userRepository.save(user);
+    return this.userRepository.insert(user);
   }
 
   @Override
   public Mono<CustomRole> saveRole(CustomRole role) {
-    return this.roleRepository.save(role);
+    return this.roleRepository.insert(role);
+  }
+
+  @Override
+  public Mono<CustomUser> updateUser(CustomUser user) {
+    return this.userRepository.save(user);
   }
 
   @Override
   public void addRoleToUser(String username, String rolename) {
-    Mono<CustomUser> user = this.userRepository.findByUsername(username);
-    Mono<CustomRole> role = this.roleRepository.findByRoleName(rolename);
-    Mono.zip(user, role).subscribe(tuple2 -> tuple2.getT1().getRoles().add(tuple2.getT2()));
+    this.userRepository.findByUsername(username).subscribe(u -> {
+      this.roleRepository.findByRoleName(rolename).subscribe(r -> {
+        System.out.println("User " + u.getUsername() + " Role " + r.getRoleName());
+        u.getRoles().add(r);
+        this.updateUser(u);
+      });
+    });
   }
 
 }

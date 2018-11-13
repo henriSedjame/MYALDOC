@@ -14,6 +14,17 @@
             <SshTunnelingConfiguration />
           </option>
         </ServerConfiguration>
+        <ServerConfiguration>
+          <option name="label" value="MongoDB" />
+          <option name="serverUrls">
+            <list>
+              <option value="localhost:27017" />
+            </list>
+          </option>
+          <option name="sshTunnelingConfiguration">
+            <SshTunnelingConfiguration />
+          </option>
+        </ServerConfiguration>
       </list>
     </option>
     <option name="shellPath" value="C:\mongodb\mongodb-win32-x86_64-2008plus-ssl-4.0.4\bin\mongod.exe" />
