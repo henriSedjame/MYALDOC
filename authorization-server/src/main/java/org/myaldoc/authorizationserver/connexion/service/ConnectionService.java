@@ -12,7 +12,7 @@ public interface ConnectionService {
 
   Mono<CustomUser> updateUser(CustomUser user);
 
-  void addRoleToUser(String username, String rolename);
+  Mono<CustomUser> addRoleToUser(String username, String rolename);
 
 
 }

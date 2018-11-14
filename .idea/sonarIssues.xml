@@ -443,6 +443,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../MYALDOC_CONFIG/application.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MYALDOC_CONFIG/authorization-server-error-messages.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../MYALDOC_CONFIG/authorization-server.yml">
           <value>
             <set />
@@ -453,7 +463,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../MYALDOC_CONFIG/eureka-service.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../MYALDOC_CONFIG/proxy-server.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MYALDOC_CONFIG/template.yml">
           <value>
             <set />
           </value>

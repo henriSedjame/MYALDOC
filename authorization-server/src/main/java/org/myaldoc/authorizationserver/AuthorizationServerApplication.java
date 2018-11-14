@@ -11,6 +11,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Profile;
 
 import java.util.TreeSet;
 import java.util.stream.Stream;
@@ -24,6 +25,7 @@ public class AuthorizationServerApplication {
   }
 
     @Bean
+    @Profile("dev")
     CommandLineRunner employees(CustomUserRepository userRepository, CustomRoleRepository roleRepository, ConnectionService service) {
         return args -> {
 
@@ -48,7 +50,7 @@ public class AuthorizationServerApplication {
                                 ).forEach(user -> {
                                     service
                                             .saveUser(user)
-                                            .subscribe(u -> service.addRoleToUser(u.getUsername(), CustomRole.ADMIN));
+                                            .subscribe(u -> service.addRoleToUser(u.getUsername(), CustomRole.ADMIN).subscribe());
                                 }));
                     });
 

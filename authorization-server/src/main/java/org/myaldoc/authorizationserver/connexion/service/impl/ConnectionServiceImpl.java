@@ -39,14 +39,14 @@ public class ConnectionServiceImpl implements ConnectionService {
   }
 
   @Override
-  public void addRoleToUser(String username, String rolename) {
-    this.userRepository.findByUsername(username).subscribe(u -> {
-      this.roleRepository.findByRoleName(rolename).subscribe(r -> {
-        System.out.println("User " + u.getUsername() + " Role " + r.getRoleName());
-        u.getRoles().add(r);
-        this.updateUser(u);
-      });
-    });
+  public Mono<CustomUser> addRoleToUser(String username, String rolename) {
+    return Mono.zip(this.userRepository.findByUsername(username), this.roleRepository.findByRoleName(rolename))
+            .flatMap(tuple -> {
+              CustomUser user = tuple.getT1();
+              CustomRole role = tuple.getT2();
+              user.getRoles().add(role);
+              return this.updateUser(user);
+            });
   }
 
 }
