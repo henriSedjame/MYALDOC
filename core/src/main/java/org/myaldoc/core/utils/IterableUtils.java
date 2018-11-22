@@ -16,4 +16,8 @@ public class IterableUtils {
   public static Set<String> StringToSet(String source, String separator) {
     return source.isEmpty() || source.isBlank() ? new HashSet<>() : Arrays.stream(source.split(separator)).collect(Collectors.toSet());
   }
+
+    public static String[] stringtoArray(String source, String separator) {
+        return source.isEmpty() || source.isBlank() ? new String[0] : source.split(separator);
+    }
 }

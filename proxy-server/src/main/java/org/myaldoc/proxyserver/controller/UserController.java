@@ -30,13 +30,11 @@ public class UserController {
   @GetMapping(value = "/user", produces = MediaType.APPLICATION_JSON_VALUE)
   public User retrieveConnectedUser(OAuth2Authentication auth) {
     OAuth2AccessToken accessToken = context.getAccessToken();
-
-
     return User.builder()
             .username(auth.getName())
             .roles(auth.getAuthorities().stream().map(authority -> authority.getAuthority()).collect(Collectors.toList()))
-            .token(accessToken.getValue())
-            .isTokenValid(!accessToken.isExpired())
+            .token(accessToken)
+            .hasValidToken(!accessToken.isExpired())
             .build();
   }
 
@@ -48,8 +46,8 @@ public class UserController {
     private String username;
     private String password;
     private List<String> roles = new ArrayList<>();
-    private String token;
-    private boolean isTokenValid;
+    private OAuth2AccessToken token;
+    private boolean hasValidToken;
   }
 
 

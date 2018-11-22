@@ -26,15 +26,17 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
   @Override
   public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+
     clients
             .inMemory()
             .withClient(clientDetails.getClientId())
             .secret(passwordEncoder.encode(clientDetails.getClientSecret()))
-            .authorizedGrantTypes(clientDetails.getGrantTypes())
-            .redirectUris(clientDetails.getRedirectUris())
+            .authorizedGrantTypes(clientDetails.getAuthorizedGrantTypes())
+            .redirectUris(clientDetails.getRegisteredRedirectUris())
             .scopes(clientDetails.getScopes())
             .accessTokenValiditySeconds(clientDetails.getAccesTokenValiditySeconds())
-            .resourceIds(clientDetails.getResourceIds())
+            .refreshTokenValiditySeconds(clientDetails.getRefreshTokenValiditySeconds())
+            .resourceIds(clientDetails.getRegisteredResourceIds())
             .autoApprove(true);
   }
 
