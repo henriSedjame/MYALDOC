@@ -7,7 +7,10 @@ import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 @Service
 public class MicroServicesServiceImpl implements MicroServicesService {
@@ -27,29 +30,48 @@ public class MicroServicesServiceImpl implements MicroServicesService {
 
     discoveryClient.getServices().forEach(serviceName -> {
       discoveryClient.getInstances(serviceName).forEach(instance -> {
-        microServicesRepository.save(MicroService.builder()
-                .name(serviceName)
-                .host(instance.getHost())
-                .port(instance.getPort())
-                .build()
-        );
+        final MicroService microService = extractMicroServiceFromServiceInstance(instance);
+        microService.setWeight(0L);
+        microServicesRepository.save(microService);
       });
     });
   }
 
   @Override
-  public MicroService retrieveMicroService(String name, int port) {
+  public MicroService retrieveMicroService(String name) {
+    MicroService microService = null;
+    List<MicroService> microServices = null;
+    final int nbRegsiteredService = this.discoveryClient.getInstances(name).size();
 
-    Optional<ServiceInstance> serviceInstance = discoveryClient.getInstances(name).stream()
-            .filter(instance -> instance.getPort() == port).findFirst();
+    do {
+      microServices = microServicesRepository.findByName(name);
+      if (microServices.size() != nbRegsiteredService) this.saveAllRegisteredServices();
+    } while (microServices.size() != nbRegsiteredService);
 
-    if (serviceInstance.isPresent())
-      return MicroService.builder()
-              .name(serviceInstance.get().getServiceId())
-              .host(serviceInstance.get().getHost())
-              .port(serviceInstance.get().getPort())
-              .build();
+    final List<Long> weights = microServices
+            .stream()
+            .map(ms -> ms.getWeight())
+            .collect(Collectors.toList());
 
-    return this.microServicesRepository.findByNameAndPort(name, port);
+    final Long min = Collections.min(weights);
+
+    if (Objects.nonNull(min)) {
+      microService = microServices.stream()
+              .filter(ms -> ms.getWeight() == min)
+              .findFirst().orElseThrow();
+    } else {
+      microService = microServices.get(0);
+    }
+    microService.setWeight(microService.getWeight() + 1);
+
+    return this.microServicesRepository.save(microService);
+  }
+
+  private MicroService extractMicroServiceFromServiceInstance(ServiceInstance serviceInstance) {
+    return MicroService.builder()
+            .name(serviceInstance.getServiceId().toLowerCase())
+            .host(serviceInstance.getHost())
+            .port(serviceInstance.getPort())
+            .build();
   }
 }

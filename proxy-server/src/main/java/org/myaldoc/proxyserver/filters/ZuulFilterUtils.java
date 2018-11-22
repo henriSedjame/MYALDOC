@@ -11,4 +11,5 @@ public class ZuulFilterUtils {
   public static final String HOST = "x-forwarded-host";
 
   public static final String HTTP = "x-forwarded-proto";
+
 }

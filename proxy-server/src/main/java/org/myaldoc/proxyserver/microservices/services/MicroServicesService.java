@@ -6,6 +6,6 @@ public interface MicroServicesService {
 
   void saveAllRegisteredServices();
 
-  MicroService retrieveMicroService(String name, int port);
+  MicroService retrieveMicroService(String name);
 
 }

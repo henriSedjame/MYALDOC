@@ -14,6 +14,8 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicHeader;
 import org.apache.http.message.BasicHttpRequest;
 import org.myaldoc.core.http.CustomHttpServletRequest;
+import org.myaldoc.proxyserver.microservices.services.MicroServicesService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.netflix.zuul.filters.ProxyRequestHelper;
 import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
@@ -32,6 +34,9 @@ import java.util.Objects;
 public class CustomZuulFilter extends ZuulFilter {
 
   private ProxyRequestHelper proxyRequestHelper = new ProxyRequestHelper();
+
+  @Autowired
+  private MicroServicesService microServicesService;
 
   @Override
   public String filterType() {
@@ -54,23 +59,26 @@ public class CustomZuulFilter extends ZuulFilter {
     /** Récupérer le context Zuul **/
     RequestContext context = RequestContext.getCurrentContext();
 
+    final String serviceName = context.get(ZuulFilterUtils.SERVICE_ID).toString();
+
     /** Récupérer la requête **/
     HttpServletRequest request = context.getRequest();
 
-    /** Construire l'url du service à appeler**/
-    String endpoint = "http://localhost:8080";
+    String http = context.getZuulRequestHeaders().get(ZuulFilterUtils.HTTP);
 
-    String route = this.buildRoute(request.getRequestURI(), endpoint, context.get(ZuulFilterUtils.SERVICE_ID).toString());
+    String endpoint = this.microServicesService.retrieveMicroService(serviceName).getUri(http);
+
+    System.out.println("ENDPOINT : " + endpoint);
+
+    String route = this.buildRoute(request.getRequestURI(), endpoint, serviceName);
 
     HttpResponse httpResponse = null;
 
     try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
 
-
       CustomHttpServletRequest customHttpServletRequest = new CustomHttpServletRequest(request);
 
       customHttpServletRequest.addHeader(ZuulFilterUtils.AUTHORIZATION_HEADER, context.getZuulRequestHeaders().get(ZuulFilterUtils.AUTHORIZATION_HEADER));
-
 
       HttpHost httpHost = this.getHost(new URL(route));
 
@@ -154,7 +162,7 @@ public class CustomZuulFilter extends ZuulFilter {
   }
 
   private MultiValueMap<String, String> revertHeaders(Header[] headers) {
-    MultiValueMap<String, String> map = new LinkedMultiValueMap<String, String>();
+    MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
     Arrays.stream(headers).forEach(header -> {
       String name = header.getName();
       if (!map.containsKey(name)) map.put(name, new ArrayList<>());

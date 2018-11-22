@@ -14,5 +14,10 @@ public class MicroService {
   private String name;
   private int port;
   private String host;
+  private Long weight;
+
+  public String getUri(String http) {
+    return http + "://" + this.host + ":" + this.port;
+  }
 
 }
