@@ -18,6 +18,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$APPLICATION_CONFIG_DIR$/scratches/rest-api_1.http">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../CLOUD_SECURITY_TEST/security-authorization-server/pom.xml">
           <value>
             <set />
@@ -53,7 +58,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../CLOUD_SECURITY_TEST/security-resource-server/src/main/java/org/cloud/securityresourceserver/GlobalMethodConfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../CLOUD_SECURITY_TEST/security-resource-server/src/main/java/org/cloud/securityresourceserver/ResourceServerWebConfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../CLOUD_SECURITY_TEST/security-resource-server/src/main/java/org/cloud/securityresourceserver/SecurityConfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../CLOUD_SECURITY_TEST/security-resource-server/src/main/java/org/cloud/securityresourceserver/SecurityResourceServerApplication.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../CLOUD_SECURITY_TEST/security-resource-server/src/main/java/org/cloud/securityresourceserver/WebApplicationInitializer.java">
           <value>
             <set />
           </value>
@@ -348,6 +373,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/core/src/main/java/org/myaldoc/core/http/CustomHttpServletRequest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/core/src/main/java/org/myaldoc/core/utils/BigDecimalUtils.java">
           <value>
             <set />
@@ -388,6 +418,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/eureka-service/src/main/java/org/myaldoc/eurekaservice/controller/RegistryLookUp.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/eureka-service/src/main/resources/application.properties">
           <value>
             <set />
@@ -418,12 +453,72 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/proxy-server/src/main/java/org/myaldoc/proxyserver/filters/CustomZuulFilter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/proxy-server/src/main/java/org/myaldoc/proxyserver/filters/ZuulFilterUtils.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/proxy-server/src/main/java/org/myaldoc/proxyserver/microservices/MicroService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/proxy-server/src/main/java/org/myaldoc/proxyserver/microservices/bootstrap/DBSeeder.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/proxy-server/src/main/java/org/myaldoc/proxyserver/microservices/bootstrap/MicroServices.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/proxy-server/src/main/java/org/myaldoc/proxyserver/microservices/controller/MicroServiceController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/proxy-server/src/main/java/org/myaldoc/proxyserver/microservices/model/MicroService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/proxy-server/src/main/java/org/myaldoc/proxyserver/microservices/repository/MicroServicesRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/proxy-server/src/main/java/org/myaldoc/proxyserver/microservices/services/MicroServicesService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/proxy-server/src/main/java/org/myaldoc/proxyserver/microservices/services/impl/MicroServicesServiceImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/proxy-server/src/main/java/org/myaldoc/proxyserver/security/config/CustomOAuth2ClientConfiguration.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/proxy-server/src/main/java/org/myaldoc/proxyserver/security/config/OAuth2ClientContextFilterWithPath.java">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/proxy-server/src/main/java/org/myaldoc/proxyserver/security/config/Securityconfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/proxy-server/src/main/java/org/myaldoc/proxyserver/session/config/HttpSessionConfig.java">
           <value>
             <set />
           </value>

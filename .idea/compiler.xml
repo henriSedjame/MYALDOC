@@ -25,9 +25,9 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="authorization-server" options="" />
       <module name="config-service" options="-parameters" />
-      <module name="core" options="-parameters" />
+      <module name="core" options="" />
       <module name="eureka-service" options="-parameters" />
-      <module name="proxy-server" options="-parameters" />
+      <module name="proxy-server" options="" />
     </option>
   </component>
 </project>
