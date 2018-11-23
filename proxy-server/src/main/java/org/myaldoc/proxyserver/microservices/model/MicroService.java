@@ -12,12 +12,13 @@ public class MicroService {
   @Id
   private String id;
   private String name;
+  private String scheme;
   private int port;
   private String host;
   private Long weight;
 
-  public String getUri(String http) {
-    return http + "://" + this.host + ":" + this.port;
+  public String getUri(String protocol) {
+    return protocol + "://" + this.host + ":" + this.port;
   }
 
 }

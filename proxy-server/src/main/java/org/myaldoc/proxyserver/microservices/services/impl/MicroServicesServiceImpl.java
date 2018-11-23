@@ -70,6 +70,7 @@ public class MicroServicesServiceImpl implements MicroServicesService {
   private MicroService extractMicroServiceFromServiceInstance(ServiceInstance serviceInstance) {
     return MicroService.builder()
             .name(serviceInstance.getServiceId().toLowerCase())
+            .scheme(serviceInstance.getScheme())
             .host(serviceInstance.getHost())
             .port(serviceInstance.getPort())
             .build();
