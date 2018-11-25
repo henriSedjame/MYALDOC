@@ -40,4 +40,5 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
             .autoApprove(true);
   }
 
+
 }

@@ -86,10 +86,9 @@
             <artifactId>spring-cloud-starter-oauth2</artifactId>
         </dependency>
 
-        <!-- Spring cloud Security-->
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-security</artifactId>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-oauth2-client</artifactId>
         </dependency>
 
         <!--  JaxB -->

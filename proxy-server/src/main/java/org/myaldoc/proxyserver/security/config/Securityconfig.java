@@ -27,9 +27,7 @@ public class Securityconfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/auth/**", "/login").permitAll()
                 .anyRequest().authenticated()
-                .and()
-                .logout().logoutSuccessUrl("http://localhost:9000/auth/exit");
+                .and().logout().logoutSuccessUrl("http://localhost:9000/auth/exit");
     }
-
 
 }

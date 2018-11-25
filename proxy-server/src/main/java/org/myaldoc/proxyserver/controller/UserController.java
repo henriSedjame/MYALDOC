@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.MediaType;
 import org.springframework.security.oauth2.client.OAuth2ClientContext;
+import org.springframework.security.oauth2.client.OAuth2RestTemplate;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
@@ -25,6 +26,8 @@ public class UserController {
   @Autowired
   @Qualifier("oauth2ClientContext")
   private OAuth2ClientContext context;
+
+  private OAuth2RestTemplate restTemplate;
 
 
   @GetMapping(value = "/user", produces = MediaType.APPLICATION_JSON_VALUE)

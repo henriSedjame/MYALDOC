@@ -1,6 +1,7 @@
 package org.myaldoc.authorizationserver.configuration;
 
 import lombok.extern.slf4j.Slf4j;
+import org.myaldoc.authorizationserver.configuration.handlers.ConnexionFailureHandler;
 import org.myaldoc.authorizationserver.configuration.service.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -21,6 +22,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   CustomUserDetailsService service;
   @Autowired
   BCryptPasswordEncoder passwordEncoder;
+  @Autowired
+  ConnexionFailureHandler failureHandler;
 
   @Override
   protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -32,14 +35,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   @Override
   protected void configure(HttpSecurity http) throws Exception {
 
-    http.requestMatchers()
+    http
+            .csrf().disable()
+            .requestMatchers()
             .antMatchers("/login", "/oauth/authorize", "/exit")
             .and()
             .authorizeRequests()
-            .anyRequest()
-            .authenticated()
+            .antMatchers("/login").permitAll()
+            .anyRequest().authenticated()
             .and().formLogin()
-            // .loginPage("/login")
+            .loginPage("/login").permitAll()
+            .failureHandler(this.failureHandler)
+
             .and().logout().logoutUrl("/logout")
             .permitAll();
   }

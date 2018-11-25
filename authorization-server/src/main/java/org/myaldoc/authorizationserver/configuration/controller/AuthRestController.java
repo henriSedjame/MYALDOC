@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.security.Principal;
 
 @RestController
-public class AuthController {
+public class AuthRestController {
 
   @GetMapping("/user")
   public Principal user(Principal principal) {
@@ -26,4 +26,5 @@ public class AuthController {
       e.printStackTrace();
     }
   }
+
 }

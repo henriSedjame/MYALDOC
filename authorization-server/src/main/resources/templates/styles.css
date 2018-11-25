@@ -1,0 +1,18 @@
+
+body {
+    margin-top: 100px;
+}
+
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+    border: solid thin rgba(119, 119, 119, 0.20);
+    border-radius: 10px
+}
+
+.form-signin-header {
+    text-align: center;
+    font-size: 1.2em;
+    font-family: 'Fira Code Light'
+}
