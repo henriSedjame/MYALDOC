@@ -1,6 +1,6 @@
 package org.myaldoc.authorizationserver.configuration.handlers;
 
-import org.springframework.beans.factory.annotation.Value;
+import org.myaldoc.authorizationserver.connexion.exception.ConnectionExceptionMessages;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
@@ -31,12 +31,7 @@ public class ConnexionFailureHandler implements AuthenticationFailureHandler {
     /**
      * MESSAGES D'ERREUR
      **/
-    @Value("${error.message.badcredentials}")
-    private String badCredentialsErroMessage;
-    @Value("${error.message.internalerror}")
-    private String internalErrorMessage;
-    @Value("${error.message.default}")
-    private String defaultErrorMessage;
+    private ConnectionExceptionMessages exceptionMessages;
 
 
     @Override
@@ -53,13 +48,13 @@ public class ConnexionFailureHandler implements AuthenticationFailureHandler {
 
         switch (code) {
             case BAD_CREDENTIALS:
-                message = this.badCredentialsErroMessage;
+                message = this.exceptionMessages.getBadCredentials();
                 break;
             case INTERNAL_ERROR:
-                message = this.internalErrorMessage;
+                message = this.exceptionMessages.getInternalError();
                 break;
             default:
-                message = this.defaultErrorMessage;
+                message = this.exceptionMessages.getDefaultMessage();
         }
         return message;
     }

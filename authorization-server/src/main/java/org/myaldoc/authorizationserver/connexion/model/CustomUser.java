@@ -22,6 +22,7 @@ public class CustomUser {
   private String id;
   private String username;
   private String password;
+  private String email;
   @DBRef
   private Set<CustomRole> roles = new TreeSet<>(Comparators.ROLE_COMPARATOR);
 

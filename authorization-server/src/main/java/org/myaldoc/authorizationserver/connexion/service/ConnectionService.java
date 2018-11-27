@@ -14,6 +14,8 @@ public interface ConnectionService {
 
   Mono<CustomUser> addRoleToUser(String username, String rolename);
 
-  Mono<CustomUser> findByUserame(String username);
+  Mono<CustomUser> retrieveUser(String username);
+
+  Mono<CustomUser> createNewUser(CustomUser user);
 
 }
