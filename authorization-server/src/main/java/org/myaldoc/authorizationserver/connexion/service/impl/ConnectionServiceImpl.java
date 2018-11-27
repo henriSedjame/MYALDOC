@@ -49,4 +49,9 @@ public class ConnectionServiceImpl implements ConnectionService {
             });
   }
 
+  @Override
+  public Mono<CustomUser> findByUserame(String username) {
+    return this.userRepository.findByUsername(username);
+  }
+
 }

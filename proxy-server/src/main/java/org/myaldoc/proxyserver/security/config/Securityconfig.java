@@ -25,6 +25,7 @@ public class Securityconfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
                 .and()
                 .authorizeRequests()
+                .antMatchers("/token").permitAll()
                 .antMatchers("/auth/**", "/login").permitAll()
                 .anyRequest().authenticated()
                 .and().logout().logoutSuccessUrl("http://localhost:9000/auth/exit");
