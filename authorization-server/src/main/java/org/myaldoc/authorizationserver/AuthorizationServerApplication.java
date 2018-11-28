@@ -1,11 +1,12 @@
 package org.myaldoc.authorizationserver;
 
-import org.myaldoc.authorizationserver.connexion.comparator.Comparators;
-import org.myaldoc.authorizationserver.connexion.model.CustomRole;
-import org.myaldoc.authorizationserver.connexion.model.CustomUser;
-import org.myaldoc.authorizationserver.connexion.repository.CustomRoleRepository;
-import org.myaldoc.authorizationserver.connexion.repository.CustomUserRepository;
-import org.myaldoc.authorizationserver.connexion.service.ConnectionService;
+import org.myaldoc.authorizationserver.connection.comparators.Comparators;
+import org.myaldoc.authorizationserver.connection.models.Role;
+import org.myaldoc.authorizationserver.connection.models.User;
+import org.myaldoc.authorizationserver.connection.repositories.AccountRepository;
+import org.myaldoc.authorizationserver.connection.repositories.RoleRepository;
+import org.myaldoc.authorizationserver.connection.repositories.UserRepository;
+import org.myaldoc.authorizationserver.connection.services.ConnectionService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -26,7 +27,7 @@ public class AuthorizationServerApplication {
 
     @Bean
     @Profile("dev")
-    CommandLineRunner employees(CustomUserRepository userRepository, CustomRoleRepository roleRepository, ConnectionService service) {
+    CommandLineRunner employees(UserRepository userRepository, RoleRepository roleRepository, AccountRepository accountRepository, ConnectionService service) {
         return args -> {
 
 
@@ -34,24 +35,28 @@ public class AuthorizationServerApplication {
                     .deleteAll()
                     .subscribe(null, null, () -> {
                         Stream.of(
-                                new CustomRole(null, CustomRole.ADMIN),
-                                new CustomRole(null, CustomRole.USER)
+                                new Role(null, Role.ADMIN),
+                                new Role(null, Role.USER)
                         ).forEach(role -> {
                             service
                                     .saveRole(role)
                                     .subscribe(System.out::println);
                         });
 
-                        userRepository
-                                .deleteAll()
-                                .subscribe(null, null, () -> Stream.of(
-                                        new CustomUser(null, "henri", "henri", new TreeSet<>(Comparators.ROLE_COMPARATOR)),
-                                        new CustomUser(null, "chloe", "chloe", new TreeSet<>(Comparators.ROLE_COMPARATOR))
-                                ).forEach(user -> {
+                      accountRepository.findAll()
+                              .subscribe(account -> service.deleteAccount(account),
+                                      null,
+                                      () -> Stream.of(
+                                              new User(null, "henri", "henri", "henri@gmail.com", new TreeSet<>(Comparators.ROLE_COMPARATOR)),
+                                              new User(null, "chloe", "chloe", "chloe@gmail.com", new TreeSet<>(Comparators.ROLE_COMPARATOR))
+                                      ).forEach(user -> {
                                     service
-                                            .saveUser(user)
-                                            .subscribe(u -> service.addRoleToUser(u.getUsername(), CustomRole.ADMIN).subscribe());
-                                }));
+                                            .createNewAccount(user)
+                                            .subscribe(account -> service.addRoleToUser(account.getUser().getUsername(), Role.ADMIN).subscribe(null, e -> System.out.println("ERREUR 1 " + e.getMessage())),
+                                                    e -> e.printStackTrace()
+
+                                            );
+                                      }));
                     });
 
         };

@@ -1,6 +1,6 @@
 package org.myaldoc.authorizationserver.configuration.handlers;
 
-import org.myaldoc.authorizationserver.connexion.exception.ConnectionExceptionMessages;
+import org.myaldoc.authorizationserver.connection.exceptions.ConnectionExceptionMessages;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;

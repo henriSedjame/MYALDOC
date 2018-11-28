@@ -2,7 +2,7 @@ package org.myaldoc.authorizationserver.configuration;
 
 import lombok.extern.slf4j.Slf4j;
 import org.myaldoc.authorizationserver.configuration.handlers.ConnexionFailureHandler;
-import org.myaldoc.authorizationserver.configuration.service.CustomUserDetailsService;
+import org.myaldoc.authorizationserver.configuration.services.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
