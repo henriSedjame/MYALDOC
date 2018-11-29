@@ -10,6 +10,7 @@
         <module name="config-service" />
         <module name="core" />
         <module name="eureka-service" />
+        <module name="notification-server" />
         <module name="proxy-server" />
       </profile>
     </annotationProcessing>
@@ -18,6 +19,7 @@
       <module name="config-service" target="11" />
       <module name="core" target="11" />
       <module name="eureka-service" target="11" />
+      <module name="notification-server" target="11" />
       <module name="proxy-server" target="11" />
     </bytecodeTargetLevel>
   </component>

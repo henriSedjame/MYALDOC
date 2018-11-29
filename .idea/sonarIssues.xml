@@ -678,6 +678,21 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/notification-server/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/notification-server/src/main/java/org/myaldoc/notificationserver/NotificationServerApplication.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/notification-server/src/main/resources/bootstrap.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/proxy-server/pom.xml">
           <value>
             <set />
