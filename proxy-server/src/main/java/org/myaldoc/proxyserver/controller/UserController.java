@@ -32,7 +32,7 @@ public class UserController {
   @Autowired
   @Qualifier("oauth2ClientContext")
   private OAuth2ClientContext context;
-  @Autowired
+  //@Autowired
   private OAuth2RestTemplate restTemplate;
 
 

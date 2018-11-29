@@ -1,6 +1,8 @@
-package org.myaldoc.authorizationserver.configuration.handlers;
+package org.myaldoc.authorizationserver.configuration.security.mvc.handlers;
 
 import org.myaldoc.authorizationserver.connection.exceptions.ConnectionExceptionMessages;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
@@ -18,6 +20,7 @@ import java.io.IOException;
  * @Class purposes : .......
  */
 
+@Profile("security")
 @Component
 public class ConnexionFailureHandler implements AuthenticationFailureHandler {
 
@@ -31,6 +34,7 @@ public class ConnexionFailureHandler implements AuthenticationFailureHandler {
     /**
      * MESSAGES D'ERREUR
      **/
+    @Autowired
     private ConnectionExceptionMessages exceptionMessages;
 
 
@@ -58,4 +62,5 @@ public class ConnexionFailureHandler implements AuthenticationFailureHandler {
         }
         return message;
     }
+
 }

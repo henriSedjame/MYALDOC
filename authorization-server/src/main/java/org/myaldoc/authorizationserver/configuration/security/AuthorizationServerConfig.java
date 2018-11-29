@@ -1,4 +1,4 @@
-package org.myaldoc.authorizationserver.configuration;
+package org.myaldoc.authorizationserver.configuration.security;
 
 import org.myaldoc.authorizationserver.configuration.models.CustomOAuth2ClientDetails;
 import org.springframework.beans.factory.annotation.Autowired;

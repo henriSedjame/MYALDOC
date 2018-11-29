@@ -1,4 +1,4 @@
-package org.myaldoc.authorizationserver.configuration;
+package org.myaldoc.authorizationserver.configuration.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

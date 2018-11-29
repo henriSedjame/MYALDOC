@@ -126,6 +126,8 @@ public class ConnectionServiceImpl implements ConnectionService {
       if (alreadyExist)
         return Mono.error(this.exceptionBuilder.buildException(MessageFormat.format(this.exceptionMessages.getUserAlreadyExist(), user.getUsername()), null));
 
+      user.setPassword(this.passwordEncoder.encode(user.getPassword()));
+
       return this.accountRepository.insert(Account.builder()
               .user(user)
               .statut(Account.Statut.EN_ATTENTE_DE_CONFRIMATION)
