@@ -1,6 +1,5 @@
 package org.myaldoc.authorizationserver.configuration.security.reactive;
 
-import org.myaldoc.authorizationserver.configuration.security.mvc.handlers.ConnexionFailureHandler;
 import org.myaldoc.authorizationserver.configuration.security.reactive.services.CustomReactiveUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -9,6 +8,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.authentication.ReactiveAuthenticationManager;
 import org.springframework.security.authentication.UserDetailsRepositoryReactiveAuthenticationManager;
+import org.springframework.security.config.annotation.method.configuration.EnableReactiveMethodSecurity;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -20,11 +20,10 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 @Order(1)
 @EnableResourceServer
 @EnableWebFluxSecurity
+@EnableReactiveMethodSecurity
 public class WebFluxSecurityConfig {
 
 
-  @Autowired
-  ConnexionFailureHandler failureHandler;
   @Autowired
   CustomReactiveUserDetailsService userDetailsService;
   @Autowired
