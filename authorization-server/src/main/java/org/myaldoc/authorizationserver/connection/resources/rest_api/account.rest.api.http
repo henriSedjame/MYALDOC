@@ -1,0 +1,11 @@
+POST {{host}}/account/create
+Content-Type: application/json
+Authorization: Bearer 49338f93-5e19-4e01-87d3-0c24a2756afd
+
+
+{
+  "username": "tom",
+  "password": "tom"
+}
+
+

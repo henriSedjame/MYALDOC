@@ -25,40 +25,42 @@ public class AuthorizationServerApplication {
     SpringApplication.run(AuthorizationServerApplication.class, args);
   }
 
-    @Bean
-    @Profile("dev")
-    CommandLineRunner employees(UserRepository userRepository, RoleRepository roleRepository, AccountRepository accountRepository, ConnectionService service) {
-        return args -> {
+
+  @Bean
+  @Profile("dev")
+  CommandLineRunner employees(UserRepository userRepository, RoleRepository roleRepository, AccountRepository accountRepository, ConnectionService service) {
+    return args -> {
 
 
-            roleRepository
-                    .deleteAll()
-                    .subscribe(null, null, () -> {
-                        Stream.of(
-                                new Role(null, Role.ADMIN),
-                                new Role(null, Role.USER)
-                        ).forEach(role -> {
-                            service
-                                    .saveRole(role)
-                                    .subscribe(System.out::println);
-                        });
+      roleRepository
+              .deleteAll()
+              .subscribe(null, null, () -> {
+                Stream.of(
+                        new Role(null, Role.ADMIN),
+                        new Role(null, Role.USER)
+                ).forEach(role -> {
+                  service
+                          .saveRole(role)
+                          .subscribe(System.out::println);
+                });
 
-                      accountRepository.findAll()
-                              .subscribe(account -> service.deleteAccount(account),
-                                      null,
-                                      () -> Stream.of(
-                                              new User(null, "henri", "henri", "henri@gmail.com", new TreeSet<>(Comparators.ROLE_COMPARATOR)),
-                                              new User(null, "chloe", "chloe", "chloe@gmail.com", new TreeSet<>(Comparators.ROLE_COMPARATOR))
-                                      ).forEach(user -> {
-                                    service
-                                            .createNewAccount(user)
-                                            .subscribe(account -> service.addRoleToUser(account.getUser().getUsername(), Role.ADMIN).subscribe(null, e -> System.out.println("ERREUR 1 " + e.getMessage())),
-                                                    e -> e.printStackTrace()
+                accountRepository.findAll()
+                        .subscribe(account -> service.deleteAccount(account),
+                                null,
+                                () -> Stream.of(
+                                        new User(null, "henri", "henri", "henri@gmail.com", new TreeSet<>(Comparators.ROLE_COMPARATOR)),
+                                        new User(null, "chloe", "chloe", "chloe@gmail.com", new TreeSet<>(Comparators.ROLE_COMPARATOR))
+                                ).forEach(user -> {
+                                  service
+                                          .createNewAccount(user)
+                                          .subscribe(account -> service.addRoleToUser(account.getUser().getUsername(), Role.ADMIN).subscribe(null, e -> System.out.println("ERREUR 1 " + e.getMessage())),
+                                                  e -> e.printStackTrace()
 
-                                            );
-                                      }));
-                    });
+                                          );
+                                }));
+              });
 
-        };
-    }
+    };
+
+  }
 }

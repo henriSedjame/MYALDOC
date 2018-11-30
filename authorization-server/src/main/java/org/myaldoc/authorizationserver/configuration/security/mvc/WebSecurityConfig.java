@@ -48,10 +48,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
             /* Définir les droits d'accès */
             .requestMatchers()
-            .antMatchers("/login", "/oauth/authorize", "/exit")
+            .antMatchers("/login", "/oauth/authorize", "/exit", "/signIn")
             .and()
             .authorizeRequests()
-            .antMatchers("/login").permitAll()
+            .antMatchers("/login", "/signIn").permitAll()
             .anyRequest().authenticated()
 
             /* Gérer la connexion */
