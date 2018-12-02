@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.myaldoc.authorizationserver.connection.exceptions.ConnectionException;
 import org.myaldoc.authorizationserver.connection.exceptions.ConnectionExceptionBuilder;
 import org.myaldoc.authorizationserver.connection.exceptions.ConnectionExceptionMessages;
+import org.myaldoc.authorizationserver.connection.messaging.EmailSource;
 import org.myaldoc.authorizationserver.connection.models.Account;
 import org.myaldoc.authorizationserver.connection.models.Role;
 import org.myaldoc.authorizationserver.connection.models.User;
@@ -11,6 +12,10 @@ import org.myaldoc.authorizationserver.connection.repositories.AccountRepository
 import org.myaldoc.authorizationserver.connection.repositories.RoleRepository;
 import org.myaldoc.authorizationserver.connection.repositories.UserRepository;
 import org.myaldoc.authorizationserver.connection.services.ConnectionService;
+import org.myaldoc.core.messaging.MyaldocEmailMessage;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.stream.annotation.EnableBinding;
+import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
@@ -19,6 +24,7 @@ import javax.validation.constraints.NotNull;
 import java.text.MessageFormat;
 
 @Service
+@EnableBinding(EmailSource.class)
 @Slf4j
 public class ConnectionServiceImpl implements ConnectionService {
 
@@ -32,7 +38,8 @@ public class ConnectionServiceImpl implements ConnectionService {
   private BCryptPasswordEncoder passwordEncoder;
   private ConnectionExceptionMessages exceptionMessages;
   private ConnectionExceptionBuilder exceptionBuilder;
-
+  @Autowired
+  private EmailSource emailSource;
 
   //********************************************************************************************************************
   // CONSTRUCTEUR
@@ -128,10 +135,12 @@ public class ConnectionServiceImpl implements ConnectionService {
 
       user.setPassword(this.passwordEncoder.encode(user.getPassword()));
 
+      this.sentForNotification(user);
+
       return this.accountRepository.insert(Account.builder()
               .user(user)
               .statut(Account.Statut.EN_ATTENTE_DE_CONFRIMATION)
-              .build()).flatMap(account -> Mono.just(account));
+              .build());
     }));
   }
 
@@ -147,6 +156,17 @@ public class ConnectionServiceImpl implements ConnectionService {
     this.userRepository.delete(user).subscribe(null, null, () -> {
       this.accountRepository.delete(account).subscribe();
     });
+  }
+
+
+  private void sentForNotification(User user) {
+    emailSource.emailOutput().send(MessageBuilder
+            .withPayload(
+                    MyaldocEmailMessage.builder()
+                            .sentToName(user.getUsername())
+                            .sentToEmail(user.getEmail())
+                            .build())
+            .build());
   }
 
 }

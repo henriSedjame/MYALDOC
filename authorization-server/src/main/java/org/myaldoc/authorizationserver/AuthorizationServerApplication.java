@@ -48,7 +48,7 @@ public class AuthorizationServerApplication {
                         .subscribe(account -> service.deleteAccount(account),
                                 null,
                                 () -> Stream.of(
-                                        new User(null, "henri", "henri", "henri@gmail.com", new TreeSet<>(Comparators.ROLE_COMPARATOR)),
+                                        new User(null, "henri", "henri", "sedhjodev@gmail.com", new TreeSet<>(Comparators.ROLE_COMPARATOR)),
                                         new User(null, "chloe", "chloe", "chloe@gmail.com", new TreeSet<>(Comparators.ROLE_COMPARATOR))
                                 ).forEach(user -> {
                                   service
