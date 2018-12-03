@@ -23,6 +23,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$APPLICATION_CONFIG_DIR$/scratches/rest-api_2.http">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../CLOUD_SECURITY_TEST/security-authorization-server/pom.xml">
           <value>
             <set />
@@ -324,6 +329,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/authorization-server/src/main/java/org/myaldoc/authorizationserver/connection/auditing/configuration/MongoAuditingConfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-server/src/main/java/org/myaldoc/authorizationserver/connection/messaging/EmailSource.java">
           <value>
             <set />
           </value>
@@ -683,6 +693,21 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/core/src/main/java/org/myaldoc/core/messaging/Mail.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/core/src/main/java/org/myaldoc/core/messaging/Message.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/core/src/main/java/org/myaldoc/core/messaging/Sms.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/core/src/main/java/org/myaldoc/core/utils/BigDecimalUtils.java">
           <value>
             <set />
@@ -744,6 +769,41 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/notification-server/src/main/java/org/myaldoc/notificationserver/NotificationServerApplication.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/notification-server/src/main/java/org/myaldoc/notificationserver/notifications/aspects/TwilioAspect.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/notification-server/src/main/java/org/myaldoc/notificationserver/notifications/models/EmailMessage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/notification-server/src/main/java/org/myaldoc/notificationserver/notifications/models/SMSMessage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/notification-server/src/main/java/org/myaldoc/notificationserver/notifications/service/NotificationService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/notification-server/src/main/java/org/myaldoc/notificationserver/notifications/service/impl/EmailNotificationServiceImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/notification-server/src/main/java/org/myaldoc/notificationserver/notifications/service/impl/SMSNotificationServiceImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/notification-server/src/main/java/org/myaldoc/notificationserver/notifications/service/impl/SmsNotificationServiceImpl.java">
           <value>
             <set />
           </value>
@@ -883,12 +943,52 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../MYALDOC_CONFIG/notification-server.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../MYALDOC_CONFIG/proxy-server.yml">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../MYALDOC_CONFIG/template.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../app/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../app/src/main/java/org/sms/twilio/app/Model/SMSMessage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../app/src/main/java/org/sms/twilio/app/aspects/TwilioAspect.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../app/src/main/java/org/sms/twilio/app/configuration/TwilioConfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../app/src/main/java/org/sms/twilio/app/services/SmsService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../app/src/main/resources/application.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../app/src/test/java/org/sms/twilio/app/services/SmsServiceTest.java">
           <value>
             <set />
           </value>
@@ -944,6 +1044,56 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../edge-service/src/main/resources/application.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../reactive-security-demo/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../reactive-security-demo/src/main/java/org/reactive/security/demo/Controller.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../reactive-security-demo/src/main/java/org/reactive/security/demo/RoutesConfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../reactive-security-demo/src/main/java/org/reactive/security/demo/RoutesHandler.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../reactive-security-demo/src/main/java/org/reactive/security/demo/SecurityConfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../reactive-security-demo/src/main/java/org/reactive/security/demo/SignInForm.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../reactive-security-demo/src/main/java/org/reactive/security/demo/SignInUtils.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../reactive-security-demo/src/main/java/org/reactive/security/demo/http-client.env.json">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../reactive-security-demo/src/main/java/org/reactive/security/demo/rest-api.http">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../reactive-security-demo/src/main/resources/application.properties">
           <value>
             <set />
           </value>

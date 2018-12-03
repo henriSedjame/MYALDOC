@@ -12,7 +12,7 @@ import org.myaldoc.authorizationserver.connection.repositories.AccountRepository
 import org.myaldoc.authorizationserver.connection.repositories.RoleRepository;
 import org.myaldoc.authorizationserver.connection.repositories.UserRepository;
 import org.myaldoc.authorizationserver.connection.services.ConnectionService;
-import org.myaldoc.core.messaging.MyaldocEmailMessage;
+import org.myaldoc.core.messaging.Mail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.messaging.support.MessageBuilder;
@@ -160,13 +160,14 @@ public class ConnectionServiceImpl implements ConnectionService {
 
 
   private void sentForNotification(User user) {
-    emailSource.emailOutput().send(MessageBuilder
-            .withPayload(
-                    MyaldocEmailMessage.builder()
+    emailSource.emailOutput()
+            .send(MessageBuilder
+                    .withPayload(Mail
+                            .builder()
                             .sentToName(user.getUsername())
                             .sentToEmail(user.getEmail())
                             .build())
-            .build());
+                    .build());
   }
 
 }

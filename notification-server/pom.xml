@@ -37,10 +37,19 @@
     </developers>
 
     <dependencies>
+
+        <!-- Myaldoc Core -->
         <dependency>
             <groupId>org.myaldoc</groupId>
             <artifactId>core</artifactId>
             <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <!-- Twilio -->
+        <dependency>
+            <groupId>com.twilio.sdk</groupId>
+            <artifactId>twilio</artifactId>
+            <version>7.20.0</version>
         </dependency>
 
         <!-- Actuator -->
@@ -50,10 +59,10 @@
         </dependency>
 
         <!-- AOP -->
-        <!--<dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
-        </dependency>-->
+        </dependency>
 
         <!-- MongoDB-->
         <dependency>

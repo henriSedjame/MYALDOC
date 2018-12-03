@@ -10,6 +10,9 @@ import org.springframework.messaging.Message;
  */
 public interface NotificationService<T> {
 
-    void notifyAccountCreation(Message<T> message);
+    default void notifyAccountCreation(Message<T> message) {
+    }
+
+    ;
 
 }

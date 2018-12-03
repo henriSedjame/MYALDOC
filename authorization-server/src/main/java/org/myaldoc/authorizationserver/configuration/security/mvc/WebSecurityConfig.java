@@ -22,6 +22,8 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 @Slf4j
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
+  private String[] permittedUris = {"/account/create"};
+
   @Autowired
   CustomUserDetailsService service;
   @Autowired
@@ -34,6 +36,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     auth
             .userDetailsService(service)
             .passwordEncoder(passwordEncoder);
+
   }
 
   @Override

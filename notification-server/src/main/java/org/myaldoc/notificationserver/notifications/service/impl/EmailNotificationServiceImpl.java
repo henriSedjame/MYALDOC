@@ -4,13 +4,12 @@ import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import lombok.extern.slf4j.Slf4j;
-import org.myaldoc.core.messaging.MyaldocEmailMessage;
+import org.myaldoc.core.messaging.Mail;
 import org.myaldoc.notificationserver.configuration.freemarker.templates.Templates;
 import org.myaldoc.notificationserver.configuration.messaging.EmailSink;
 import org.myaldoc.notificationserver.notifications.models.EmailMessage;
 import org.myaldoc.notificationserver.notifications.repositories.EmailMessageRepository;
 import org.myaldoc.notificationserver.notifications.service.NotificationService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.StreamListener;
@@ -20,6 +19,7 @@ import org.springframework.messaging.Message;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
 
+import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -35,27 +35,30 @@ import java.time.LocalDate;
 @Service
 @Slf4j
 @EnableBinding(EmailSink.class)
-public class EmailNotificationServiceImpl implements NotificationService<MyaldocEmailMessage> {
+public class EmailNotificationServiceImpl implements NotificationService<Mail> {
 
     private EmailMessageRepository emailMessageRepository;
     private JavaMailSender mailSender;
     private Configuration configuration;
-    @Autowired
-    @Qualifier("accountCreationemailTemplate")
-    private Templates accountCreationEmailTemplate;
+    private Templates emailTemplate;
 
-    public EmailNotificationServiceImpl(EmailMessageRepository emailMessageRepository, JavaMailSender mailSender, Configuration configuration) {
+    public EmailNotificationServiceImpl(EmailMessageRepository emailMessageRepository,
+                                        JavaMailSender mailSender,
+                                        Configuration configuration,
+                                        @Qualifier("accountCreationemailTemplate") Templates emailTemplate) {
         this.emailMessageRepository = emailMessageRepository;
         this.mailSender = mailSender;
         this.configuration = configuration;
+        this.emailTemplate = emailTemplate;
     }
 
     @StreamListener(EmailSink.ACCOUNT_CREATION_EMAIL_INPUT)
     @Override
-    public void notifyAccountCreation(Message<MyaldocEmailMessage> message) {
+    public void notifyAccountCreation(Message<Mail> message) {
+
         log.info("Compte creation notification starts.");
 
-        final MyaldocEmailMessage emailMessage = message.getPayload();
+        final Mail emailMessage = message.getPayload();
 
         final MimeMessage mimeMessage = mailSender.createMimeMessage();
 
@@ -68,28 +71,31 @@ public class EmailNotificationServiceImpl implements NotificationService<Myaldoc
 
             final Template template = configuration.getTemplate("email-template.ftl");
 
-            final String html = FreeMarkerTemplateUtils.processTemplateIntoString(template, accountCreationEmailTemplate.getVariables());
+            final String html = FreeMarkerTemplateUtils.processTemplateIntoString(template, emailTemplate.getVariables());
 
-            mimeMessageHelper.setTo(emailMessage.getSentToEmail());
-            mimeMessageHelper.setSubject("Confirmation de création de compte");
-            mimeMessageHelper.setText(html, true);
-            mimeMessageHelper.setFrom("sedhjo@gmail.com");
+            this.buildAndSendEmail(emailMessage, mimeMessage, mimeMessageHelper, html);
 
-            mailSender.send(mimeMessage);
-
-        } catch (IOException | TemplateException | javax.mail.MessagingException e) {
+        } catch (IOException | TemplateException | MessagingException e) {
             sendSuccessfully = false;
             log.error(e.getMessage());
         }
 
         emailMessage.setSentDate(LocalDate.now());
-        emailMessage.setSentSuccessful(sendSuccessfully);
+        emailMessage.setSentSuccessfully(sendSuccessfully);
 
         final EmailMessage mail = new EmailMessage();
         this.emailMessageRepository.insert(mail.clone(emailMessage))
                 .subscribe(em -> log.info("email envoyé à :" + em.getSentToName() + " (" + em.getSentToEmail() + ")"));
 
         log.info("Compte creation notification ends.");
+    }
+
+    private void buildAndSendEmail(Mail emailMessage, MimeMessage mimeMessage, MimeMessageHelper mimeMessageHelper, String html) throws MessagingException {
+        mimeMessageHelper.setTo(emailMessage.getSentToEmail());
+        mimeMessageHelper.setSubject("Confirmation de création de compte");
+        mimeMessageHelper.setText(html, true);
+        mimeMessageHelper.setFrom("sedhjo@gmail.com");
+        mailSender.send(mimeMessage);
     }
 
 }
