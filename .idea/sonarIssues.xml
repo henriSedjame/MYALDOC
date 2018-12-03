@@ -1048,6 +1048,21 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../online_checkout/src/main/java/fr/projects/online_checkout/stripe/aspects/StripeAspect.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../online_checkout/src/main/java/fr/projects/online_checkout/stripe/service/StripeAccountService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../online_checkout/src/test/java/fr/projects/online_checkout/stripe/service/impl/StripeAccountServiceImplTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../reactive-security-demo/pom.xml">
           <value>
             <set />
