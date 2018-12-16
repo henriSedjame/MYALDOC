@@ -6,7 +6,11 @@ import org.springframework.messaging.MessageChannel;
 public interface EmailSource {
 
   String ACCOUNT_CREATION_EMAIL_OUTPUT = "accountCreationEmailOutput";
+    String ACCOUNT_DELETION_EMAIL_OUTPUT = "accountDeletionEmailOutput";
 
   @Output(ACCOUNT_CREATION_EMAIL_OUTPUT)
-  MessageChannel emailOutput();
+  MessageChannel accountCreationEmailOutput();
+
+    @Output(ACCOUNT_DELETION_EMAIL_OUTPUT)
+    MessageChannel accountDeletionEmailOutput();
 }

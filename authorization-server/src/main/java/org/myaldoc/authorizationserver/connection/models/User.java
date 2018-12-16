@@ -18,6 +18,7 @@ import java.util.TreeSet;
 @Document(collection = "Users")
 @Getter
 @Setter
+@ToString(exclude = "roles")
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder

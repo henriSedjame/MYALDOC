@@ -1,7 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Java Techie Mail</title>
+    <title>${Title}</title>
 </head>
 
 <body>
@@ -29,7 +29,7 @@
                             <br> ""This channel is created to share the knowledge and
                             to gain the knowledge"<br>
                             <br>"Sharing the knowledge is biggest learning" <br> <br>
-                            <br> <br> <b>${Name}</b><br>${location}<br>
+                            <br> <br> <b>${Name}</b><br>${Location}<br>
                             <br>
                         </div>
                     </td>

@@ -2,6 +2,7 @@ package org.myaldoc.core.exceptions;
 
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -10,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
+@Component
 public abstract class ExceptionBuilder<T extends Exception> {
 
   @Getter
@@ -56,6 +58,7 @@ public abstract class ExceptionBuilder<T extends Exception> {
    * Méthode permettant de vider la liste des arguments du builder
    */
   public void clear() {
+      log.info("ExceptionBuilder in cleaning...");
     this.exceptions.clear();
   }
 

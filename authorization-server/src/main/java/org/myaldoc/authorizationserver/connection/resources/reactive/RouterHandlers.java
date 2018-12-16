@@ -41,18 +41,6 @@ public class RouterHandlers {
     return ServerResponse.ok().contentType(MediaType.TEXT_PLAIN).syncBody(error.getMessage());
   }
 
-  /**
-   * CREATION D'UN NOUVEAU USER
-   *
-   * @param request
-   * @return
-   */
-  public Mono<ServerResponse> handleCreateAccount(ServerRequest request) {
-    return request.bodyToMono(User.class)
-            .flatMap(user -> this.connectionService.createNewAccount(user)
-                    .flatMap(account -> ServerResponse.ok().syncBody(account))
-                    .onErrorResume(RouterHandlers::handleError));
-  }
 
   /**
    * CONNEXION

@@ -5,8 +5,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.ui.freemarker.FreeMarkerConfigurationFactoryBean;
 
-import java.util.Map;
-
 /**
  * @Project MYALDOC
  * @Author Henri Joel SEDJAME
@@ -23,15 +21,6 @@ public class FreeMarkerConfig {
         FreeMarkerConfigurationFactoryBean bean = new FreeMarkerConfigurationFactoryBean();
         bean.setTemplateLoaderPath("classpath:/templates");
         return bean;
-    }
-
-    @Bean("accountCreationemailTemplate")
-    public Templates accountCreationemailTemplate() {
-        Templates template = new Templates();
-        final Map<String, Object> variables = template.getVariables();
-        variables.put("Name", "Henri SEDJAME");
-        variables.put("location", "Niort");
-        return template;
     }
 
 }

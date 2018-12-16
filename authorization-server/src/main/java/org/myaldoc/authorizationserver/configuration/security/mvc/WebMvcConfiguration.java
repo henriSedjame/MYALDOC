@@ -31,6 +31,6 @@ public class WebMvcConfiguration implements WebMvcConfigurer {
 
   @Override
   public void addResourceHandlers(ResourceHandlerRegistry registry) {
-    registry.addResourceHandler("/account/create", "/signIn");
+      registry.addResourceHandler("");
   }
 }

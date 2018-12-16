@@ -16,7 +16,6 @@ public class ConnectionRouters {
 
     @Bean
     RouterFunction<?> routerFunction(RouterHandlers handlers) {
-        return route(POST("/account/create").and(accept(MediaType.APPLICATION_JSON)), handlers::handleCreateAccount)
-                .andRoute(POST("/login").and(accept(MediaType.APPLICATION_JSON)), handlers::handleSignIn);
+        return route(POST("/login").and(accept(MediaType.APPLICATION_JSON)), handlers::handleSignIn);
     }
 }

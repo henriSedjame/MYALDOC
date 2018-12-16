@@ -15,4 +15,9 @@ public interface NotificationService<T> {
 
     ;
 
+    default void notifyAccountSuppression(Message<T> message) {
+    }
+
+    ;
+
 }

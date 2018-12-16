@@ -22,7 +22,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 @Slf4j
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-  private String[] permittedUris = {"/account/create"};
+  private String[] permittedUris = {"/login"};
 
   @Autowired
   CustomUserDetailsService service;
@@ -43,26 +43,26 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   protected void configure(HttpSecurity http) throws Exception {
 
     http
-            /* Désactiver l'auth basic */
+            /** Désactiver l'auth basic **/
             .httpBasic().disable()
 
-            /* Désactiver la gestion du csrf par Spring*/
+            /** Désactiver la gestion du csrf par Spring **/
             .csrf().disable()
 
-            /* Définir les droits d'accès */
+            /** Définir les droits d'accès **/
             .requestMatchers()
-            .antMatchers("/login", "/oauth/authorize", "/exit", "/signIn")
+            .antMatchers("/login", "/oauth/authorize", "/exit")
             .and()
             .authorizeRequests()
-            .antMatchers("/login", "/signIn").permitAll()
+            .antMatchers("/login").permitAll()
             .anyRequest().authenticated()
 
-            /* Gérer la connexion */
+            /** Gérer la connexion **/
             .and().formLogin()
             .loginPage("/login").permitAll()
             .failureHandler(this.failureHandler)
 
-            /* Gérer la déconnexion */
+            /** Gérer la déconnexion **/
             .and().logout().logoutUrl("/logout")
             .permitAll();
   }

@@ -24,5 +24,8 @@ public class ConnectionExceptionMessages {
     private String userNotFound;
     private String badCredentials;
     private String userAlreadyExist;
+    private String accountDeletionError;
+    private String userRetrievingError;
+    private String userSavingError;
 
 }

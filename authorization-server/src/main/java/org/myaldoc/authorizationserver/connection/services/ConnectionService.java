@@ -1,6 +1,5 @@
 package org.myaldoc.authorizationserver.connection.services;
 
-import org.myaldoc.authorizationserver.connection.models.Account;
 import org.myaldoc.authorizationserver.connection.models.Role;
 import org.myaldoc.authorizationserver.connection.models.User;
 import reactor.core.publisher.Mono;
@@ -19,8 +18,6 @@ public interface ConnectionService {
 
   Mono<User> retrieveUser(String username);
 
-  Mono<Account> createNewAccount(@Valid User user);
-
-  void deleteAccount(Account account);
+  Mono<Void> deleteUser(String userId);
 
 }

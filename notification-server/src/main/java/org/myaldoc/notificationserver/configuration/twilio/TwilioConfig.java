@@ -1,4 +1,4 @@
-package org.myaldoc.notificationserver.notifications.configuration;
+package org.myaldoc.notificationserver.configuration.twilio;
 
 import lombok.*;
 import org.springframework.boot.context.properties.ConfigurationProperties;
