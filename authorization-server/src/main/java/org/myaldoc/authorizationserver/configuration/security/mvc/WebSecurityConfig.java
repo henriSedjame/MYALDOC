@@ -22,8 +22,6 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 @Slf4j
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-  private String[] permittedUris = {"/login"};
-
   @Autowired
   CustomUserDetailsService service;
   @Autowired
@@ -51,10 +49,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
             /** Définir les droits d'accès **/
             .requestMatchers()
-            .antMatchers("/login", "/oauth/authorize", "/exit")
+            .antMatchers("/login", "/oauth/authorize", "/exit", "/activation")
             .and()
             .authorizeRequests()
-            .antMatchers("/login").permitAll()
+            .antMatchers("/login", "/activation").permitAll()
             .anyRequest().authenticated()
 
             /** Gérer la connexion **/

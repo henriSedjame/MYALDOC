@@ -13,4 +13,6 @@ public interface NotificationSender {
     void notifyAccountCreation(User user);
 
     void notifyAccountDeletion(User user);
+
+    void notifyAccountActivation(User user);
 }

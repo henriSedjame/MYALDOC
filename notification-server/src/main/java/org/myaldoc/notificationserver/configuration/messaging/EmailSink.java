@@ -12,11 +12,16 @@ import org.springframework.messaging.SubscribableChannel;
 public interface EmailSink {
 
     String ACCOUNT_CREATION_EMAIL_INPUT = "accountCreationEmailInput";
-    String ACCOUNT_DELETIONN_EMAIL_INPUT = "accountDeletionEmailInput";
+    String ACCOUNT_DELETION_EMAIL_INPUT = "accountDeletionEmailInput";
+    String ACCOUNT_ACTIVATION_EMAIL_INPUT = "accountActivationEmailInput";
 
     @Input(ACCOUNT_CREATION_EMAIL_INPUT)
     SubscribableChannel accountCreationEmailInput();
 
-    @Input(ACCOUNT_DELETIONN_EMAIL_INPUT)
+    @Input(ACCOUNT_DELETION_EMAIL_INPUT)
     SubscribableChannel accountDeletionEmailInput();
+
+    @Input(ACCOUNT_ACTIVATION_EMAIL_INPUT)
+    SubscribableChannel accountActivationEmailInput();
+
 }

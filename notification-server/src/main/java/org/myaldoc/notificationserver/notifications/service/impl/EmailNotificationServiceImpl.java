@@ -65,11 +65,11 @@ public class EmailNotificationServiceImpl implements NotificationService<Mail> {
         log.info("Compte creation notification ends.");
     }
 
-    @StreamListener(EmailSink.ACCOUNT_DELETIONN_EMAIL_INPUT)
+    @StreamListener(EmailSink.ACCOUNT_DELETION_EMAIL_INPUT)
     @Override
     public void notifyAccountSuppression(Message<Mail> message) {
 
-        log.info("Compte creation notification starts.");
+        log.info("Compte suppression notification starts.");
 
         Map<String, String> variables = new HashMap<>();
         variables.put("Title", "Confirmation de suppression de compte");
@@ -78,7 +78,7 @@ public class EmailNotificationServiceImpl implements NotificationService<Mail> {
 
         this.sendMessage(message, variables);
 
-        log.info("Compte creation notification ends.");
+        log.info("Compte suppression notification ends.");
     }
 
     private void sendMessage(Message<Mail> message, Map<String, String> variables) {
@@ -114,7 +114,7 @@ public class EmailNotificationServiceImpl implements NotificationService<Mail> {
 
     private void buildAndSendEmail(Mail emailMessage, MimeMessage mimeMessage, MimeMessageHelper mimeMessageHelper, String html) throws MessagingException {
         mimeMessageHelper.setTo(emailMessage.getSentToEmail());
-        mimeMessageHelper.setSubject("Confirmation de création de compte");
+        mimeMessageHelper.setSubject(emailMessage.getSubject());
         mimeMessageHelper.setText(html, true);
         mimeMessageHelper.setFrom("sedhjo@gmail.com");
         mailSender.send(mimeMessage);

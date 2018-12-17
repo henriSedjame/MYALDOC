@@ -34,6 +34,7 @@ public class User {
   private String email;
   @DBRef
   private Set<Role> roles = new TreeSet<>(Comparators.ROLE_COMPARATOR);
+  private boolean enabled;
 
   @JsonIgnore
   public String getPassword() {

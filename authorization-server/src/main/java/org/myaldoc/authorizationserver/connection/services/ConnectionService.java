@@ -5,6 +5,7 @@ import org.myaldoc.authorizationserver.connection.models.User;
 import reactor.core.publisher.Mono;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 public interface ConnectionService {
 
@@ -14,10 +15,12 @@ public interface ConnectionService {
 
   Mono<User> updateUser(@Valid User user);
 
-  Mono<User> addRoleToUser(String username, String rolename);
+  Mono<User> activateUser(@NotNull String userId);
 
-  Mono<User> retrieveUser(String username);
+  Mono<User> addRoleToUser(@NotNull String username, @NotNull String rolename);
 
-  Mono<Void> deleteUser(String userId);
+  Mono<User> retrieveUser(@NotNull String username);
+
+  Mono<Void> deleteUser(@NotNull String userId);
 
 }

@@ -12,9 +12,11 @@ import java.time.LocalDate;
 @Builder
 public class Mail {
 
+  private String subject;
   @Email
   private String sentToEmail;
   private String sentToName;
   private LocalDate sentDate;
+  private String userActivationUri;
   private boolean sentSuccessfully;
 }

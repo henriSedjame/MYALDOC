@@ -27,5 +27,6 @@ public class ConnectionExceptionMessages {
     private String accountDeletionError;
     private String userRetrievingError;
     private String userSavingError;
+    private String userActivationError;
 
 }

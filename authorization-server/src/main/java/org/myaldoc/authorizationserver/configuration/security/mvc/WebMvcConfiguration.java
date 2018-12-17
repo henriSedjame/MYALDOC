@@ -26,11 +26,12 @@ public class WebMvcConfiguration implements WebMvcConfigurer {
   public void addViewControllers(ViewControllerRegistry registry) {
     registry.addViewController("/login").setViewName("login");
     registry.addViewController("/logout").setViewName("logout");
+    registry.addViewController("/activation").setViewName("activation");
     registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
   }
 
   @Override
   public void addResourceHandlers(ResourceHandlerRegistry registry) {
-      registry.addResourceHandler("");
+    registry.addResourceHandler("/user/create", "user/delete/**", "user/activate/**");
   }
 }

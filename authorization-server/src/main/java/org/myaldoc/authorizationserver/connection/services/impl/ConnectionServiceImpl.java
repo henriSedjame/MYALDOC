@@ -72,7 +72,11 @@ public class ConnectionServiceImpl implements ConnectionService {
               if (exist)
                 return Mono.error(this.exceptionBuilder.buildException(MessageFormat.format(this.exceptionMessages.getUserAlreadyExist(), user.getUsername()), null));
 
+              /*cryptage du mot de passe*/
               user.setPassword(this.passwordEncoder.encode(user.getPassword()));
+
+              /*Initialisation de la propriété enabled à false*/
+              user.setEnabled(false);
               try {
                 return this.userRepository.save(user)
                         .doOnSuccess(u -> this.notificationSender.notifyAccountCreation(u));
@@ -98,6 +102,7 @@ public class ConnectionServiceImpl implements ConnectionService {
    * @return
    */
   @Override
+  @ExceptionBuilderClearBefore
   public Mono<User> updateUser(User user) {
     return Mono.defer(() -> {
       try {
@@ -106,7 +111,22 @@ public class ConnectionServiceImpl implements ConnectionService {
         return Mono.error(this.exceptionBuilder.buildException(MessageFormat.format(this.exceptionMessages.getUserSavingError(), user.getUsername()), e));
       }
     });
+  }
 
+  /**
+   * ACTIVATION D'UN USER
+   *
+   * @param userId
+   * @return
+   */
+  @Override
+  public Mono<User> activateUser(String userId) {
+    return this.userRepository
+            .findById(userId)
+            .flatMap(user -> {
+              user.setEnabled(true);
+              return this.userRepository.save(user).doOnSuccess(u -> this.notificationSender.notifyAccountActivation(u));
+            });
   }
 
   /**

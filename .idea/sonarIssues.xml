@@ -333,6 +333,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/authorization-server/src/main/java/org/myaldoc/authorizationserver/connection/exceptions/ConnectionExceptionMessages.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/authorization-server/src/main/java/org/myaldoc/authorizationserver/connection/messaging/EmailSource.java">
           <value>
             <set />
@@ -354,6 +359,36 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/authorization-server/src/main/java/org/myaldoc/authorizationserver/connection/models/User.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-server/src/main/java/org/myaldoc/authorizationserver/connection/models/dto/UserDTO.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-server/src/main/java/org/myaldoc/authorizationserver/connection/models/mappings/UserMapper.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-server/src/main/java/org/myaldoc/authorizationserver/connection/models/mappings/impl/UserMapperImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-server/src/main/java/org/myaldoc/authorizationserver/connection/models/mappings/utils/IterableTransformer.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-server/src/main/java/org/myaldoc/authorizationserver/connection/models/mappings/utils/IterableTransformerUtils.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-server/src/main/java/org/myaldoc/authorizationserver/connection/models/mappings/utils/RoleIterableTransformer.java">
           <value>
             <set />
           </value>
@@ -453,6 +488,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/authorization-server/src/main/java/org/myaldoc/authorizationserver/connection/services/NotificationSender.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/authorization-server/src/main/java/org/myaldoc/authorizationserver/connection/services/SignInService.java">
           <value>
             <set />
@@ -464,6 +504,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/authorization-server/src/main/java/org/myaldoc/authorizationserver/connection/services/impl/ConnectionServiceImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-server/src/main/java/org/myaldoc/authorizationserver/connection/services/impl/NotificationSenderImpl.java">
           <value>
             <set />
           </value>
@@ -638,12 +683,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/authorization-server/src/main/resources/templates/activation.html">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/authorization-server/src/main/resources/templates/login.html">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/authorization-server/src/test/java/org/myaldoc/authorizationserver/configuration/MyaldocClientDetailsServiceTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-server/src/test/java/org/myaldoc/authorizationserver/connection/resources/mvc/ConnectionControllerTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-server/src/test/java/org/myaldoc/authorizationserver/connection/services/impl/ConnectionServiceImplTest.java">
           <value>
             <set />
           </value>
@@ -769,6 +829,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/notification-server/src/main/java/org/myaldoc/notificationserver/NotificationServerApplication.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/notification-server/src/main/java/org/myaldoc/notificationserver/configuration/messaging/EmailSink.java">
           <value>
             <set />
           </value>
@@ -928,6 +993,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../MYALDOC_CONFIG/authorization-server-messages.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../MYALDOC_CONFIG/authorization-server.yml">
           <value>
             <set />
@@ -1018,6 +1088,61 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../cucumber/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../cucumber/src/main/java/shj/training/cucumber/CucumberApplication.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../cucumber/src/main/java/shj/training/cucumber/MyStepdefs.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../cucumber/src/main/java/shj/training/cucumber/features/MyStepdefs.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../cucumber/src/main/java/shj/training/cucumber/features/StepDef.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../cucumber/src/main/java/shj/training/cucumber/features/login.feature">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../cucumber/src/main/java/shj/training/cucumber/features/save.feature">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../cucumber/src/main/java/shj/training/cucumber/runner/TestRunner.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../cucumber/src/main/java/shj/training/cucumber/stepDefinitions/LoginDefinitionSteps.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../cucumber/src/main/java/shj/training/cucumber/stepDefinitions/LoginStepDefinitions.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../cucumber/src/main/java/shj/training/cucumber/stepDefinitions/MyStepdefs.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../edge-service/pom.xml">
           <value>
             <set />
@@ -1044,6 +1169,51 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../edge-service/src/main/resources/application.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../flux/destination/in.txt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../flux/destination/in.txt___jb_tmp___">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../flux/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../flux/source/in.txt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../flux/source/input.txt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../flux/src/main/java/org/testing/flux/FluxApplication.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../flux/src/main/java/org/testing/flux/config/FileIntegrationConfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../flux/src/main/java/org/testing/flux/config/FileTransformer.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../flux/src/main/java/org/testing/flux/rest.http">
           <value>
             <set />
           </value>
@@ -1144,6 +1314,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../security-client/src/main/resources/templates/secure.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../webproject/src/index.html">
           <value>
             <set />
           </value>

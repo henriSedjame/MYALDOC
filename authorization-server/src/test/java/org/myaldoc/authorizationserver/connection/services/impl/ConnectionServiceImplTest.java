@@ -109,6 +109,19 @@ public class ConnectionServiceImplTest {
     }
 
     @Test
+    public void activateUser() {
+        Mono<User> userMono = service.activateUser(USER_ID);
+
+        StepVerifier.create(userMono)
+                .assertNext(u -> {
+                    assertTrue(u.isEnabled());
+                    verify(notificationSender, times(1)).notifyAccountActivation(any(User.class));
+                })
+                .expectComplete()
+                .verify();
+    }
+
+    @Test
     public void updateUser() {
         user.setEmail(EMAIL_2);
         final Mono<User> userMono = service.updateUser(user);
@@ -165,4 +178,5 @@ public class ConnectionServiceImplTest {
         StepVerifier.create(userMono)
                 .expectErrorMessage(EMAIL_INCORRECT);
     }
+
 }
