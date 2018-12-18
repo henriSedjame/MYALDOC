@@ -10,7 +10,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.reactive.server.WebTestClient;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+import reactor.test.StepVerifier;
 
 import static org.junit.Assert.*;
 
@@ -18,14 +20,15 @@ import static org.junit.Assert.*;
 @SpringBootTest
 public class ConnectionControllerTest {
 
-  public static final String USER_CREATE = "/user/create";
-  public static final String USER_DELETE = "/user/delete";
-  public static final String USER_ACTIVATE = "/user/activate";
-  public static final String USERNAME = "guest";
-  public static final String PASSWORD = "Hiphop!87";
-  public static final String USER_ID = "14jkkltest";
-  public static final String EMAIL = "guest@gmail.com";
-  User user;
+  private static final String USER_CREATE = "/user/create";
+  private static final String USER_DELETE = "/user/delete";
+  private static final String USER_ACTIVATE = "/user/activate";
+  private static final String USERNAME = "guest";
+  private static final String PASSWORD = "Hiphop!87";
+  private static final String USER_ID = "14jkkltest";
+  private static final String EMAIL = "guest@gmail.com";
+  private User user;
+
   @Autowired
   private ConnectionController controller;
   private WebTestClient webTestClient;
@@ -60,26 +63,49 @@ public class ConnectionControllerTest {
             .exchange()
             .expectStatus()
             .isOk()
-            .expectHeader()
-            .contentType(MediaType.APPLICATION_JSON)
-            .expectBody(User.class)
+            .returnResult(User.class)
             .consumeWith(
                     result -> {
-                      User u = result.getResponseBody();
-                      assertNotNull(u);
-                      assertEquals(USERNAME, u.getUsername());
-                      assertEquals(EMAIL, u.getEmail());
-                      assertFalse(u.isEnabled());
+                      Flux<User> u = result.getResponseBody();
+                      StepVerifier.create(u)
+                              .assertNext(us -> {
+                                assertNotNull(u);
+                                assertEquals(USERNAME, us.getUsername());
+                                assertEquals(EMAIL, us.getEmail());
+                                assertFalse(us.isEnabled());
+                              }).expectComplete()
+                              .verify();
                     }
             );
   }
 
   @Test
   public void activateUser() {
+    webTestClient
+            .get()
+            .uri(USER_ACTIVATE + "/" + USER_ID)
+            .exchange()
+            .expectStatus()
+            .isOk()
+            .returnResult(User.class)
+            .consumeWith(result -> {
+              Flux<User> body = result.getResponseBody();
+              StepVerifier.create(body)
+                      .assertNext(u -> {
+                        assertNotNull(u);
+                        assertTrue(u.isEnabled());
+                      });
+            });
   }
 
   @Test
   public void deleteUser() {
+    webTestClient
+            .delete()
+            .uri(USER_DELETE + "/" + USER_ID)
+            .exchange()
+            .expectStatus()
+            .isOk();
   }
 
 }

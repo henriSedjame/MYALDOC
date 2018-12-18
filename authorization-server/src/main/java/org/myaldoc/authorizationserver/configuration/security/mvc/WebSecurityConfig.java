@@ -49,10 +49,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
             /** Définir les droits d'accès **/
             .requestMatchers()
-            .antMatchers("/login", "/oauth/authorize", "/exit", "/activation")
+            .antMatchers("/login", "/oauth/authorize", "/exit", "/activation**", "/user/create", "/user/delete/**", "/user/activate/**")
             .and()
             .authorizeRequests()
-            .antMatchers("/login", "/activation").permitAll()
+            .antMatchers("/login", "/user/create", "/user/delete/**", "/user/activate/**", "/activation**").permitAll()
             .anyRequest().authenticated()
 
             /** Gérer la connexion **/

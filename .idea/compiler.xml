@@ -36,7 +36,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="authorization-server" target="1.8" />
+      <module name="authorization-server" target="10" />
       <module name="config-service" target="11" />
       <module name="core" target="11" />
       <module name="eureka-service" target="11" />

@@ -79,6 +79,7 @@ public class ConnectionServiceImpl implements ConnectionService {
               user.setEnabled(false);
               try {
                 return this.userRepository.save(user)
+                        .flatMap(us -> this.addRoleToUser(us.getUsername(), Role.USER))
                         .doOnSuccess(u -> this.notificationSender.notifyAccountCreation(u));
               } catch (Exception e) {
                 return Mono.error(this.exceptionBuilder.buildException(MessageFormat.format(this.exceptionMessages.getUserSavingError(), user.getUsername()), e));

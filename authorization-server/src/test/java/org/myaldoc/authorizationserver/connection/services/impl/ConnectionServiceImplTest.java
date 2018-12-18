@@ -98,6 +98,8 @@ public class ConnectionServiceImplTest {
                     assertNotNull(u);
                     assertNotNull(u.getId());
                     assertEquals(USER_ID, u.getId());
+                    assertFalse(u.isEnabled());
+                    assertTrue(u.getRoles().stream().anyMatch(role -> role.getRoleName().equals(Role.USER)));
                     verify(notificationSender, times(1)).notifyAccountCreation(any(User.class));
                 })
                 .expectComplete()

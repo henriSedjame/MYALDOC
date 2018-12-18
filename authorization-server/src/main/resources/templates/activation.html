@@ -21,13 +21,13 @@
 <div class="container col-md-6">
 
     <div th:if="${param.error}" class="alert alert-danger">
-        <span th:text="${@connectionExceptionMessages.getUserActivationError()}">default error message</span>
+        <span th:text="${@activationHandler.getActivationFailure(param.id)}">default error message</span>
     </div>
     <div th:if="${param.name}" class="alert alert-success">
         <p>
-            <span th:text="#{user.activation.success(${param.name})}">defaultName</span>
+            <span th:text="${@activationHandler.getActivationSuccess(param.name)}">defaultName</span>
         </p>
-        <button class="btn btn-success" th:action="${#response.sendRedirect('/auth/login')}">SE CONNECTER</button>
+        <button class="btn btn-success" th:action="@{/login}">SE CONNECTER</button>
     </div>
 </div>
 </body>

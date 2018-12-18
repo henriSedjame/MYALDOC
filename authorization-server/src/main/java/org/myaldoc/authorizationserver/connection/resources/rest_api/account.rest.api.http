@@ -1,14 +1,20 @@
-POST {{host}}/account/create
+POST {{host}}/user/create
 Content-Type: application/json
-Authorization: Bearer 9cc98d64-1a7c-4778-b0e5-989a060bd1de
 
 
 {
-  "username": "herve",
-  "password": "herve",
+  "username": "henri",
+  "password": "henri",
   "email" : "sedhjodev@gmail.com"
 }
 
 ###
 
+GET {{host}}/user/activate/5c18a21c0cd59f0ee44a6310
+
+###
+
+DELETE {{host}}/user/delete/14jkkltest
+
+###
 
