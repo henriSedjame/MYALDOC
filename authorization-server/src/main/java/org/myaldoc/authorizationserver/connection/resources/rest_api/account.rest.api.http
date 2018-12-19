@@ -1,12 +1,16 @@
-POST {{host}}/user/create
+POST {{host}}/{{uri-user-create}}
 Content-Type: application/json
 
+< user.json
 
-{
-  "username": "henri",
-  "password": "henri",
-  "email" : "sedhjodev@gmail.com"
-}
+> {%
+   client.test("create user", function() {
+     client.log("test")
+     var username = response.body.username;
+     client.assert(username === "chloe", "no property id found")
+   });
+%}
+
 
 ###
 
@@ -14,7 +18,12 @@ GET {{host}}/user/activate/5c18a21c0cd59f0ee44a6310
 
 ###
 
-DELETE {{host}}/user/delete/14jkkltest
+DELETE {{host}}/user/delete/5c1a3daf0cd59f0d44f6526b
 
+> {%
+   client.test("delete user", function() {
+     client.assert(response.status === 200, "response status is not equal to 200")
+   })
+ %}
 ###
 
