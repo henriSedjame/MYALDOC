@@ -29,7 +29,7 @@ GET {{host}}/{{uri-user-activate}}/{{id}}
      /*assertions*/
      client.assert(status === 200, "response status is not equal to 200");
      client.assert(enabled === true, "user is not enbaled");
-   })
+   });
  %}
 
 ###
@@ -42,7 +42,7 @@ DELETE {{host}}/{{uri-user-delete}}/{{id}}
 
      /*asserrtions*/
      client.assert(status === 200, "response status is not equal to 200")
-   })
+   });
  %}
 ###
 
