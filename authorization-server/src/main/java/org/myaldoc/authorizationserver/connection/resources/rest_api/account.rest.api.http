@@ -5,24 +5,43 @@ Content-Type: application/json
 
 > {%
    client.test("create user", function() {
-     client.log("test")
+     var status = response.status;
      var username = response.body.username;
-     client.assert(username === "chloe", "no property id found")
+     var enabled = response.body.enabled;
+
+     /*assertions*/
+     client.assert(status === 200, "response status is not equal to 200");
+     client.assert(username === "chloe", "no property id found");
+     client.assert(enabled === false, "user is enabled");
    });
 %}
 
 
 ###
 
-GET {{host}}/user/activate/5c18a21c0cd59f0ee44a6310
+GET {{host}}/{{uri-user-activate}}/{{id}}
+
+> {%
+   client.test("activate user", function() {
+     var enabled = response.body.enabled;
+     var status = response.status;
+
+     /*assertions*/
+     client.assert(status === 200, "response status is not equal to 200");
+     client.assert(enabled === true, "user is not enbaled");
+   })
+ %}
 
 ###
 
-DELETE {{host}}/user/delete/5c1a3daf0cd59f0d44f6526b
+DELETE {{host}}/{{uri-user-delete}}/{{id}}
 
 > {%
    client.test("delete user", function() {
-     client.assert(response.status === 200, "response status is not equal to 200")
+     var status = response.status;
+
+     /*asserrtions*/
+     client.assert(status === 200, "response status is not equal to 200")
    })
  %}
 ###
