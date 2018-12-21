@@ -38,6 +38,7 @@ public class WebFluxSecurityConfig {
   @Autowired
   CustomServerAuthenticationConverter authenticationConverter;
 
+
   @Bean
   public ServerSecurityContextRepository serverSecurityContextRepository() {
     WebSessionServerSecurityContextRepository securityContextRepository = new WebSessionServerSecurityContextRepository();
@@ -68,6 +69,7 @@ public class WebFluxSecurityConfig {
             .anyExchange()
             .permitAll()
             .and()
+
 
             .addFilterAt(authenticationWebFilter(), SecurityWebFiltersOrder.AUTHENTICATION)
             .addFilterAt(logoutWebFilter(), SecurityWebFiltersOrder.LOGOUT)

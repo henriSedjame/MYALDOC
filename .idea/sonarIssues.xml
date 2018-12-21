@@ -153,6 +153,116 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/authorization-reactive-server/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-reactive-server/src/main/java/org/myaldoc/authorizationreactiveserver/AuthorizationReactiveServerApplication.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-reactive-server/src/main/java/org/myaldoc/authorizationreactiveserver/login/endpoint/AuthRequest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-reactive-server/src/main/java/org/myaldoc/authorizationreactiveserver/login/endpoint/AuthResponse.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-reactive-server/src/main/java/org/myaldoc/authorizationreactiveserver/models/Role.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-reactive-server/src/main/java/org/myaldoc/authorizationreactiveserver/models/User.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-reactive-server/src/main/java/org/myaldoc/authorizationreactiveserver/models/utils/UserUtils.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-reactive-server/src/main/java/org/myaldoc/authorizationreactiveserver/repository/UserRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-reactive-server/src/main/java/org/myaldoc/authorizationreactiveserver/resource/ConnectionRouters.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-reactive-server/src/main/java/org/myaldoc/authorizationreactiveserver/resource/RouteHandler.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-reactive-server/src/main/java/org/myaldoc/authorizationreactiveserver/resource/RouteHandlers.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-reactive-server/src/main/java/org/myaldoc/authorizationreactiveserver/security/GlobalConfiguration.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-reactive-server/src/main/java/org/myaldoc/authorizationreactiveserver/security/JWTUtils.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-reactive-server/src/main/java/org/myaldoc/authorizationreactiveserver/security/MyaldocPasswordEncoder.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-reactive-server/src/main/java/org/myaldoc/authorizationreactiveserver/security/MyaldocReactiveAuthManager.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-reactive-server/src/main/java/org/myaldoc/authorizationreactiveserver/security/MyaldocSecurityContextRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-reactive-server/src/main/java/org/myaldoc/authorizationreactiveserver/security/WebSecurityConfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-reactive-server/src/main/java/org/myaldoc/authorizationreactiveserver/services/CustomReactiveUserDetailsService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-reactive-server/src/main/java/org/myaldoc/authorizationreactiveserver/services/UserService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-reactive-server/src/main/java/org/myaldoc/authorizationreactiveserver/services/impl/UserServiceImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-reactive-server/src/main/resources/application.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/authorization-reactive-server/src/main/resources/application.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/authorization-server/pom.xml">
           <value>
             <set />
@@ -778,6 +888,26 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/core/src/main/java/org/myaldoc/core/security/JWTUtils.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/core/src/main/java/org/myaldoc/core/security/MyaldocReactiveAuthManager.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/core/src/main/java/org/myaldoc/core/security/models/MyaldocUser.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/core/src/main/java/org/myaldoc/core/security/models/User.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/core/src/main/java/org/myaldoc/core/utils/BigDecimalUtils.java">
           <value>
             <set />
@@ -1034,6 +1164,21 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../MYALDOC_CONFIG/template.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../app-demo/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../app-demo/security-server/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../app-demo/security-server/src/main/java/org/security/reactive/securityserver/SecurityServerApplication.java">
           <value>
             <set />
           </value>
