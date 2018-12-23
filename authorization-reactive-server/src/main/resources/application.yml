@@ -1,9 +1,0 @@
-jwt:
-  config:
-    secret: mySecret
-    expiration: 28800
-  password:
-    encoder:
-      secret: mySecret
-      iteration: 33
-      keyLength: 256

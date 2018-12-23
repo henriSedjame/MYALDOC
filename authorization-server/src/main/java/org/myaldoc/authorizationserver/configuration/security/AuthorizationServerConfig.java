@@ -1,7 +1,6 @@
 package org.myaldoc.authorizationserver.configuration.security;
 
 import org.myaldoc.authorizationserver.configuration.models.CustomOAuth2ClientDetails;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -15,19 +14,25 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 @EnableAuthorizationServer
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
-  @Autowired
-  private BCryptPasswordEncoder passwordEncoder;
-  @Autowired
-  private CustomOAuth2ClientDetails clientDetails;
-  @Autowired
-  private AuthenticationManager authenticationManager;
+  private final BCryptPasswordEncoder passwordEncoder;
+  private final CustomOAuth2ClientDetails clientDetails;
+  private final AuthenticationManager authenticationManager;
+
+
+  public AuthorizationServerConfig(BCryptPasswordEncoder passwordEncoder,
+                                   CustomOAuth2ClientDetails clientDetails,
+                                   AuthenticationManager authenticationManager) {
+    this.passwordEncoder = passwordEncoder;
+    this.clientDetails = clientDetails;
+    this.authenticationManager = authenticationManager;
+  }
 
 
   @Override
   public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
 
     security.tokenKeyAccess("permitAll()")
-            .checkTokenAccess("isAuthenticated()");
+            .checkTokenAccess("permitAll()");
   }
 
   @Override

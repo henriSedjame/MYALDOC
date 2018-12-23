@@ -16,7 +16,6 @@
         <option value="$PROJECT_DIR$/authorization-server/pom.xml" />
         <option value="$PROJECT_DIR$/proxy-server/pom.xml" />
         <option value="$PROJECT_DIR$/notification-server/pom.xml" />
-        <option value="$PROJECT_DIR$/authorization-reactive-server/pom.xml" />
       </list>
     </option>
   </component>

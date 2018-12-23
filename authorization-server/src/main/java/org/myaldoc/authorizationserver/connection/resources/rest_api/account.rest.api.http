@@ -11,7 +11,7 @@ Content-Type: application/json
 
      /*assertions*/
      client.assert(status === 200, "response status is not equal to 200");
-     client.assert(username === "chloe", "no property id found");
+     client.assert(username === "henri", "no property id found");
      client.assert(enabled === false, "user is enabled");
    });
 %}

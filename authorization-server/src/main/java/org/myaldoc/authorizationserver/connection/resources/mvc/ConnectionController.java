@@ -35,4 +35,9 @@ public class ConnectionController {
     return this.connectionService.activateUser(userId);
   }
 
+    @GetMapping(value = "/user/retrieve")
+    public Mono<User> retrieveUser(@RequestParam(value = "username") String username) {
+        return this.connectionService.retrieveUser(username);
+    }
+
 }

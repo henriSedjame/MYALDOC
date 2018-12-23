@@ -1,0 +1,8 @@
+## Nom du service qu'utilisera le service proxy pour interroger le service
+spring:
+  application:
+    name: proxy-server
+
+  cloud:
+    config:
+      uri: http://localhost:8888

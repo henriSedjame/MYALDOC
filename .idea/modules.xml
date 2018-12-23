@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/MYALDOC.iml" filepath="$PROJECT_DIR$/.idea/MYALDOC.iml" />
-      <module fileurl="file://$PROJECT_DIR$/authorization-reactive-server/authorization-reactive-server.iml" filepath="$PROJECT_DIR$/authorization-reactive-server/authorization-reactive-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/authorization-server/authorization-server.iml" filepath="$PROJECT_DIR$/authorization-server/authorization-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/config-service/config-service.iml" filepath="$PROJECT_DIR$/config-service/config-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
