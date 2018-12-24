@@ -4,7 +4,7 @@ import lombok.*;
 import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonSetter;
 import org.myaldoc.authorizationserver.connection.comparators.Comparators;
-import org.myaldoc.authorizationserver.connection.patterns.Patterns;
+import org.myaldoc.core.patterns.Patterns;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
